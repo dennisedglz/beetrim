@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCBal4x8vXD1I-H3OsX9zTvLgngdd1Edhg",
-    authDomain: "beetrim-9692e.firebaseapp.com",
-    databaseURL: "https://beetrim-9692e.firebaseio.com",
-    projectId: "beetrim-9692e",
-    storageBucket: "beetrim-9692e.appspot.com",
-    messagingSenderId: "431437018938",
-    appId: "1:431437018938:web:49ea093c0059f55d50c203",
-    measurementId: "G-BEGK3X2GGP"
+      apiKey: "AIzaSyC2RidD410i9jFoZfYXvR8Rrl30UlSWJ4Y",
+      authDomain: "beetrim-b69e0.firebaseapp.com",
+      databaseURL: "https://beetrim-b69e0.firebaseio.com",
+      projectId: "beetrim-b69e0",
+      storageBucket: "beetrim-b69e0.appspot.com",
+      messagingSenderId: "841436813311",
+      appId: "1:841436813311:web:8945283c6fe14a105379ca",
+      measurementId: "G-FKYB8F58QP"
   }
 };
 
