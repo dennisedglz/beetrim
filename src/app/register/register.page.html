@@ -1,0 +1,20 @@
+<ion-content padding>
+  <div class="cover">
+    <img class="logo" src="../../assets/imgs/home.png" />
+    <form [formGroup]="registerForm">
+      <h1>Registro</h1>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item> 
+        <ion-label>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      
+      <ion-button (click)="onSubmit()" class="full-button" type="submit" expand="full" color="primary" [disabled]="!registerForm.valid">Registrarme</ion-button>
+
+    </form>
+    <button class="simple-link" (click)="goToLogin()">Login</button>
+  </div>
+</ion-content>
