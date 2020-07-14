@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'perfil-card',
+    path: 'perfil',
     loadChildren: () => import('./perfil-card/perfil-card.module').then( m => m.PerfilCardPageModule)
   },
 ];

@@ -2,17 +2,17 @@
   <div class="cover">
     <img class="logo" src="../../assets/imgs/home.png" />
     <form [formGroup]="loginForm">
-      <h1>LOGIN</h1>
+      <h1>Beetrim</h1>
       <ion-item>
-        <ion-label>Username</ion-label>
+        <ion-label>Correo</ion-label>
         <ion-input type="text" formControlName="email"></ion-input>
       </ion-item>
       <ion-item> 
-        <ion-label>Password</ion-label>
+        <ion-label>Contraseña</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
       
-      <ion-button (click)="onSubmit()" class="full-button" type="submit" expand="full" color="primary" [disabled]="!loginForm.valid">Login</ion-button>
+      <ion-button (click)="onSubmit()" class="full-button" type="submit" expand="full" color="primary" [disabled]="!loginForm.valid">INICIAR SESIÓN</ion-button>
 
     </form>
     <button class="simple-link" (click)="goToRegister()">Registrate</button>

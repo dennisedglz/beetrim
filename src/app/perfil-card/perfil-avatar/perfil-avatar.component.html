@@ -1,15 +1,9 @@
-<ion-content padding>
-  <div class="cover">
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-img [src]="perfil.foto"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{perfil.nombre}} {{perfil.apellidoPat}} {{perfil.apellidoMat}}</h2>
-        <p>{{perfil.descripcion}}</p>
-      </ion-label>
-    </ion-item>
-  </div>
-</ion-content>
-
-<app-perfil-card></app-perfil-card>
+<div>
+  <ion-item>
+    <ion-avatar slot="start">
+      <ion-img [src]="perfil.foto"></ion-img>
+    </ion-avatar>
+    <h2>{{perfil.nombre}} {{perfil.apellidoPat}} {{perfil.apellidoMat}}</h2>
+    <p>{{perfil.descripcion}}</p>
+  </ion-item>
+</div>
