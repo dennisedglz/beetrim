@@ -1,9 +1,9 @@
-<div>
-  <ion-item>
-    <ion-avatar slot="start">
-      <ion-img [src]="perfil.foto"></ion-img>
-    </ion-avatar>
+<div class="perfil-avatar">
+  <ion-avatar slot="start">
+    <ion-img [src]="perfil.foto"></ion-img>
+  </ion-avatar>
+  <div class="personal-info">
     <h2>{{perfil.nombre}} {{perfil.apellidoPat}} {{perfil.apellidoMat}}</h2>
     <p>{{perfil.descripcion}}</p>
-  </ion-item>
+  </div>
 </div>

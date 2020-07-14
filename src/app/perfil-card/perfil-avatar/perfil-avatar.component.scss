@@ -1,36 +1,29 @@
-h1{
-    text-align: center;
-    font-weight: bold;
-    color:black;
-    font-size: 2rem;
-    font-family: "Roboto";
-    text-transform: uppercase;
-}
 
-h2{
-    font-weight: bold;
-    color:black;
-    font-family: "Roboto";
-}
+.perfil-avatar {
+	margin: 16px;
+	padding: 15px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-p{
-    color: black;
-}
+	h2{
+			font-weight: bold;
+			color:black;
+			font-family: "Roboto";
+	}
+	
+	p{
+			color: black;
+	}
 
-.cover {
-    background: white;
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-}
+	ion-avatar.ios.hydrated {
+			width: 90px;
+			height: 90px;
+	}
 
-.item {
-    --background: transparent;
-    opacity: 1;
-    border-bottom: 1px solid #FFF;
-    color: #FFF;
-    margin: 10px 0 30px;
+	.personal-info {
+    width: calc(100% - 100px);
+	}
 }
 
 

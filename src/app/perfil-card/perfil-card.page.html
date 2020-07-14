@@ -1,7 +1,8 @@
-<div class="cover">
+
+<ion-content>
+  <app-perfil-avatar></app-perfil-avatar>
 
   <ion-card>
-
     <ion-item>
       <ion-slides pager="true" [options]="slideOpts">
         <ion-slide>
@@ -26,14 +27,11 @@
       <ion-icon name="star-sharp"></ion-icon>
       <ion-label slot="end"> 4.8 (15)</ion-label>
     </ion-item>
-
+    
     <ion-card-content>
       {{perfil.descripcion}}
      </ion-card-content>
-
   </ion-card>
-
-  <app-perfil-avatar></app-perfil-avatar>
 
   <ion-card>
     <ion-item class="ion-activated">
@@ -56,5 +54,8 @@
       <ion-label>Limpieza de ventanas</ion-label>
     </ion-item>
   </ion-card>
+</ion-content>
 
-</div>
+
+
+
