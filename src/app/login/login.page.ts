@@ -21,7 +21,6 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
   }
 
   onSubmit() {
@@ -33,8 +32,7 @@ export class LoginPage {
   async login() {
     const user = await this.authSvc.onLogin(this.user);
     if(user) {
-      console.log('Success on register!');
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/perfil');
     }
   }
 
