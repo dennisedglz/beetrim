@@ -16,6 +16,11 @@ export class PerfilService {
     return this.db.collection(coleccion).doc(documentId).snapshotChanges();
   }
 
+  public consultarResenaPorId(coleccion, documentId) {
+    console.log('doc', documentId);
+    return this.db.collection('resenas', ref => ref.where('idUsuario', '==', documentId)).valueChanges();
+  }
+
   public insertar(coleccion, datos) {
     return this.db.collection(coleccion).add(datos);
   }

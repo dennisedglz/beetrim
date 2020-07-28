@@ -1,0 +1,34 @@
+.perfil-card {
+
+    background-color: white;
+
+    .imagen-card{
+        display:block;
+        margin:auto;    
+        width: 100%;
+        height: 200px;   
+    }
+
+    .header{
+        margin:10px;
+    }
+  
+    .star-icon{
+        width: 15px;
+        height: 15px; 
+    }
+
+	h2{
+		font-weight: bold;
+		color:black;
+		font-family: "Roboto";
+	}
+	
+	p{
+        margin:10px;
+        color: black;
+		font-family: "Roboto";
+    }
+    
+}
+
