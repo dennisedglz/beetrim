@@ -23,5 +23,8 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
+    this.platform.backButton.subscribeWithPriority(1, () => { // to disable hardware back button on whole app
+    });
   }
 }

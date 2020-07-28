@@ -96,7 +96,7 @@ export class AgendaStepsPage implements OnInit {
   }
 
   goToPerfil() {
-    this.router.navigateByUrl('/mi-perfil');
+    this.router.navigateByUrl('/mi-perfil', { replaceUrl: true });
   }
 
   goToAgenda() {
@@ -104,7 +104,13 @@ export class AgendaStepsPage implements OnInit {
   }
 
   logout() {
-    console.log('Logout');
-    this.authSvc.logoutUser();
+    this.authSvc.logoutUser()
+      .then(res => {
+        console.log(res);
+        this.router.navigateByUrl('/login', { replaceUrl: true });
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 }
