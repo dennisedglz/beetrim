@@ -1,0 +1,33 @@
+
+.perfil-avatar {
+	background-color: white;
+	padding: 15px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	h2{
+		font-weight: bold;
+		color:black;
+		font-family: "Roboto";
+	}
+	
+	p{
+		color: black;
+		font-family: "Roboto";
+	}
+
+	ion-avatar.ios.hydrated {
+		width: 90px;
+		height: 90px;
+	}
+
+	.personal-info {
+		text-align: left;
+    	width: calc(100% - 100px);
+	}
+
+}
+
+
+

@@ -1,4 +1,5 @@
 import { TipoUsuarioDto } from "./TipoUsuarioDto";
+import { ResenasDto } from './ResenasDto';
 
 export class PerfilDto {
     idPerfil: string;
@@ -13,8 +14,7 @@ export class PerfilDto {
     vigFin: Date;
     verificado: number;
     tipoUsuario: TipoUsuarioDto;
-    fotoServicio1: string;
-    fotoServicio2: string;
-    fotoServicio3: string;
+    servicioTitulo: string;
     servicioDescripcion: string;
+    fotosServicio: Array<string>;
 }
