@@ -1,0 +1,40 @@
+.wrap {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0 16px;
+    h4 {
+        font-weight: 200;
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
+    }
+    .header-buttons {
+        background-color: #002443;
+        color: #FFF;
+        margin-bottom: 0;
+        padding: 5px 15px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .buttons-card {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        button.step {
+            width: 33.333%;
+            background-color: white;
+            padding: 10px 5px;
+
+            &.active {
+                background-color: rgb(1,150,139);
+                color: white;
+            }
+
+            ion-icon {
+                font-size: 2.3em;
+            }
+        }
+    }
+    .full-button {
+        margin: 40px 0 0;
+    }
+}

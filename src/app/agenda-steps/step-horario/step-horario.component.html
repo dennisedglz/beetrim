@@ -1,0 +1,54 @@
+<div class="wrap">
+  <h4>¿Qué horario prefiere?</h4>
+  <h5 class="header-buttons">Desde 250 MXN por hora</h5>
+  <div class="buttons-card">
+    <button class="step" [ngClass]="{'active': hora == '8:00'}"  (click)="changeHora('8:00')">
+      <p>8:00</p> 
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '8:30'}"  (click)="changeHora('8:30')">
+      <p>8:30</p> 
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '9:00'}"  (click)="changeHora('9:00')">
+      <p>9:00</p> 
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '9:30'}"  (click)="changeHora('9:30')">
+      <p>9:30</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '10:00'}"  (click)="changeHora('10:00')">
+      <p>10:00</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '10:30'}"  (click)="changeHora('10:30')">
+      <p>10:30</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '11:00'}"  (click)="changeHora('11:00')">
+      <p>11:00</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '11:30'}"  (click)="changeHora('11:30')">
+      <p>11:30</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '12:00'}"  (click)="changeHora('12:00')">
+      <p>12:00</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '13:00'}"  (click)="changeHora('13:00')">
+      <p>13:00</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '13:30'}"  (click)="changeHora('13:30')">
+      <p>13:30</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': hora == '14:00'}"  (click)="changeHora('14:00')">
+      <p>14:00</p>
+    </button>
+  </div>
+  <ion-button class="full-button" expand="full" color="primary" (click)="nextSlide()">CONTINUAR</ion-button> 
+</div>

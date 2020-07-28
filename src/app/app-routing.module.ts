@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./perfil-card/perfil-card.module').then( m => m.PerfilCardPageModule)
   },
+  {
+    path: 'agendar',
+    loadChildren: () => import('./agenda-steps/agenda-steps.module').then( m => m.AgendaStepsPageModule)
+  },
+  {
+    path: 'mi-perfil',
+    loadChildren: () => import('./mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule)
+  },
 ];
 
 @NgModule({

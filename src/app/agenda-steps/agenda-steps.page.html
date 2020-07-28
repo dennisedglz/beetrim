@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Limpieza</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <div class="overlay">
+      <!--<h1>Limpieza</h1>-->
+    </div>
+
+    <div class="wizard-steps">
+        <button class="step" [ngClass]="{'active': contador < 1}">
+          <span class="circle">1</span>
+          <p>Dirección</p>
+        </button>
+
+        <button class="step" [ngClass]="{'active': contador >= 1 && contador < 5}">
+          <span class="circle">2</span>
+          <p>Agendar</p>
+        </button>
+
+        <button class="step" [ngClass]="{'active': contador >= 5}">
+          <span class="circle">3</span>
+          <p>Extras</p>
+        </button>
+      </div>
+  </div>
+
+  <ion-slides #slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <app-step-lugar (clickSwipe)="onSwipeEmitted($event)"></app-step-lugar>
+    </ion-slide>
+
+    <ion-slide>
+      <app-step-periodo (clickSwipe)="onSwipeEmitted($event)"></app-step-periodo>
+    </ion-slide>
+
+    <ion-slide>
+      <app-step-tiempo (clickSwipe)="onSwipeEmitted($event)"></app-step-tiempo>
+    </ion-slide>
+
+    <ion-slide>
+      <app-step-calendario (clickSwipe)="onSwipeEmitted($event)"></app-step-calendario>
+    </ion-slide>
+
+    <ion-slide>
+      <app-step-horario (clickSwipe)="onSwipeEmitted($event)"></app-step-horario>
+    </ion-slide>
+
+    <ion-slide>
+      <app-step-extras (clickSwipe)="onSwipeEmitted($event)"></app-step-extras>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="footer-menu">
+      <button class="icon-button" expand="block" color="primary" (click)="goToAgenda()">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <p>Agenda</p>
+      </button>
+
+      <button class="icon-button" expand="block" color="primary" (click)="goToPerfil()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <p>Perfil</p>
+      </button>
+
+      <button class="icon-button" expand="block" color="primary" click="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <p>Cerrar sesión</p>
+      </button>
+    </div>
+    
+      
+
+  </ion-toolbar>
+</ion-footer>
