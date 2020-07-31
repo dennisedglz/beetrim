@@ -18,6 +18,9 @@ export class LoginPage {
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
+
+    this.loginForm.get('email').setValue('dennise.dglz@gmail.com');
+    this.loginForm.get('password').setValue('123456');
   }
 
   ionViewDidLoad() {
@@ -31,12 +34,14 @@ export class LoginPage {
 
   async login() {
     const user = await this.authSvc.onLogin(this.user);
+    console.log(user);
     if(user) {
-      this.router.navigateByUrl('/perfil');
+      //this.router.navigateByUrl('/agendar');
+      this.router.navigateByUrl('/agendar', { replaceUrl: true });
     }
   }
 
   goToRegister() {
-    this.router.navigateByUrl('/register');
+    this.router.navigateByUrl('/register', { replaceUrl: true });
   }
 }

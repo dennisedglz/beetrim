@@ -1,0 +1,22 @@
+<div class="wrap">
+
+  <h4>Seleccione la fecha</h4>
+
+  <h5>{{viewTitle}}</h5>
+  <calendar
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    [markDisabled]="markDisabled"
+    [lockSwipeToPrev]="lockSwipeToPrev"
+    (onCurrentDateChanged)="onCurrentDateChanged($event)"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    step="30"
+    startingDayWeek="1">
+  </calendar>
+
+
+  <ion-button class="full-button" expand="full" color="primary" (click)="nextSlide()">CONTINUAR</ion-button>
+</div>

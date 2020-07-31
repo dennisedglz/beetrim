@@ -30,4 +30,19 @@ export class AuthService {
       console.error('Error register ', error);
      }
    }
+
+   // Login with Firebase
+  logoutUser() {
+    return new Promise((resolve, reject) => {
+      if (this.afAuth.currentUser) {
+        this.afAuth.signOut()
+          .then(() => {
+            console.log("LOG Out");
+            resolve();
+          }).catch((error) => {
+            reject();
+          });
+      }
+    })
+  }
 }

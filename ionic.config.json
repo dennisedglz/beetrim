@@ -1,5 +1,7 @@
 {
   "name": "beetrim",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

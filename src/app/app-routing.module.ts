@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
   },
   {
     path: 'register',
@@ -24,7 +24,18 @@ const routes: Routes = [
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./perfil-card/perfil-card.module').then( m => m.PerfilCardPageModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'agendar',
+    loadChildren: () => import('./agenda-steps/agenda-steps.module').then( m => m.AgendaStepsPageModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'mi-perfil',
+    loadChildren: () => import('./mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'agenda',

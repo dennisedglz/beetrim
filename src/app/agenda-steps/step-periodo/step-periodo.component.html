@@ -1,0 +1,22 @@
+<div class="wrap">
+  <h4>¿Qué tan seguido necesita el servicio?</h4>
+  <h5 class="header-buttons">Desde 250 MXN por hora</h5>
+  <div class="buttons-card">
+    <button  class="step" [ngClass]="{'active': frecuencia == 'semanalmente'}" (click)="changeFrec('semanalmente')">
+      <ion-icon name="calendar"></ion-icon>
+      <p>Semanalmente</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': frecuencia == 'quincenalmente'}" (click)="changeFrec('quincenalmente')">
+      <ion-icon name="calendar"></ion-icon>
+      <p>Cada 15 días</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': frecuencia == 'unica'}" (click)="changeFrec('unica')">
+      <ion-icon name="calendar"></ion-icon>
+      <p>Una vez</p>
+    </button>
+  </div>
+
+  <ion-button class="full-button" expand="full" color="primary" (click)="nextSlide()">CONTINUAR</ion-button>
+</div>
