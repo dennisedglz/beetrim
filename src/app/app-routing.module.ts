@@ -42,6 +42,10 @@ const routes: Routes = [
     loadChildren: () => import('./resumen-cita/resumen-cita.module').then( m => m.ResumenCitaPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'agenda',
+    loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
 ];
 
 @NgModule({

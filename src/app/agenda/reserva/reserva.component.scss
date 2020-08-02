@@ -1,0 +1,62 @@
+.principal{
+    background-color: white;
+    padding: 15px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reserva{
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 95%;
+    height: 100px;
+    border-left: 8px solid orange;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 15px; 
+}
+
+.fecha{
+    float: left;
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    margin: 10px 10px 20px 20px;  
+    border-radius: 15px; 
+}
+
+.informacion{
+    float: right;
+    width: 180px;
+    height: 80px;
+    margin: 20px 20px 20px 0px;   
+}
+
+h1{
+    color:black;
+    font-family: "Roboto";
+    margin: 20px
+}
+
+h2{
+    text-align: center;
+    color:black;
+    font-family: "Roboto";
+    margin: 15px 0px 0px 0px;   
+}
+
+h3{
+    text-align: center;
+    color:black;
+    font-family: "Roboto";
+    margin: 2px;
+    font-size: 15px;
+}
+
+p{
+    margin: 5px;
+    color: black;
+    font-family: "Roboto";
+}
