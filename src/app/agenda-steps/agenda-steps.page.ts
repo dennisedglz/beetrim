@@ -87,6 +87,7 @@ export class AgendaStepsPage implements OnInit {
     console.log('Fecha: ', fecha);
     if (fecha > today) {
       console.log('todo bien');
+      this.router.navigateByUrl('/resumen-cita');
       //Mandar al resumen... 
     } else if(fecha ==  today) {
       console.log('checar horas');

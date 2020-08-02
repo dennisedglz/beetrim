@@ -37,6 +37,11 @@ const routes: Routes = [
     loadChildren: () => import('./mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'resumen-cita',
+    loadChildren: () => import('./resumen-cita/resumen-cita.module').then( m => m.ResumenCitaPageModule),
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({
