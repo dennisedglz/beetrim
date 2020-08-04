@@ -16,16 +16,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'perfil',
-    loadChildren: () => import('./perfil-card/perfil-card.module').then( m => m.PerfilCardPageModule),
-    canActivate: [AuthGuard],
   },
   {
     path: 'agendar',
