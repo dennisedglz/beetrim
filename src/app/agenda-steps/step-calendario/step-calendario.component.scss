@@ -34,6 +34,10 @@
     }
 }
 
+:host ::ng-deep .event-detail-container {
+    display: none!important;
+}
+
 :host ::ng-deep .monthview-selected {
     background: var(--ion-color-secondary)!important;
     color: var(--ion-color-secondary-contrast)!important;
