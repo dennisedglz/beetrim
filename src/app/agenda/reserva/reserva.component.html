@@ -2,7 +2,7 @@
   
   <h1>AGOSTO</h1>
 
-  <div *ngFor="let agenda of agendas"class="reserva">  
+  <div *ngFor="let agenda of agendas" class="reserva" (click)="abrirDetalles(agenda)">  
     <div class="fecha">
       <h2>{{agenda.fecha | date:'dd'}}</h2>
       <h2>{{agenda.fecha | date:'MMM'}}</h2>

@@ -8,6 +8,8 @@ import { PerfilPageRoutingModule } from './perfil-routing.module';
 import { PerfilCardModule } from './perfil-card/perfil-card.module';
 import { PerfilResenasModule } from './perfil-resenas/perfil-resenas.module';
 import { PerfilActividadesComponent } from './perfil-actividades/perfil-actividades.component';
+import { PerfilModule } from './perfil/perfil.module';
+import { PerfilActividadesModule } from './perfil-actividades/perfil-actividades.module';
 
 @NgModule({
   imports: [
@@ -17,11 +19,12 @@ import { PerfilActividadesComponent } from './perfil-actividades/perfil-activida
     PerfilPageRoutingModule,
     PerfilAvatarModule,
     PerfilCardModule,
-    PerfilResenasModule
+    PerfilResenasModule,
+    PerfilActividadesModule,
+    PerfilModule
   ],
   declarations: [
     PerfilPage,
-    PerfilActividadesComponent
   ]
 })
 export class PerfilPageModule {}

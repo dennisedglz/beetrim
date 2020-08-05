@@ -14,6 +14,7 @@ import { StepHorarioModule } from './step-horario/step-horario.module';
 import { StepCalendarioModule } from './step-calendario/step-calendario.module';
 import { StepExtrasModule } from './step-extras/step-extras.module';
 import { StepTiempoModule } from './step-tiempo/step-tiempo.module';
+import { PerfilModule } from '../perfil/perfil/perfil.module';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { StepTiempoModule } from './step-tiempo/step-tiempo.module';
     StepTiempoModule,       //Step 3
     StepCalendarioModule,   //Step 4
     StepHorarioModule,      //Step 5
-    StepExtrasModule        //Step 6
+    StepExtrasModule,       //Step 6
+    PerfilModule
   ],
   declarations: [
     AgendaStepsPage

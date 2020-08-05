@@ -9,6 +9,8 @@ import { AgendaPageRoutingModule } from './agenda-routing.module';
 import { AgendaPage } from './agenda.page';
 import { ReservaModule } from './reserva/reserva.module';
 import { MenuModule } from '../menu/menu.module';
+import { PerfilModule } from '../perfil/perfil/perfil.module';
+import { DetallesReservaComponent } from './detalles-reserva/detalles-reserva.component';
 
 @NgModule({
   imports: [
@@ -17,8 +19,10 @@ import { MenuModule } from '../menu/menu.module';
     IonicModule,
     AgendaPageRoutingModule,
     ReservaModule,
-    MenuModule
+    MenuModule,
+    PerfilModule
   ],
-  declarations: [AgendaPage]
+  declarations: [AgendaPage,
+    DetallesReservaComponent]
 })
 export class AgendaPageModule {}

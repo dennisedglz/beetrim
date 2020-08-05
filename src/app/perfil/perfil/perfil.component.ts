@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilDto } from '../dto/PerfilDto';
-import { PerfilService } from './services/perfil.service';
+import { PerfilDto } from 'src/app/dto/PerfilDto';
+import { PerfilService } from '../services/perfil.service';
 
 @Component({
-  selector: 'app-perfil-page',
-  templateUrl: './perfil.page.html',
-  styleUrls: ['./perfil.page.scss'],
+  selector: 'app-perfil',
+  templateUrl: './perfil.component.html',
+  styleUrls: ['./perfil.component.scss'],
 })
-export class PerfilPage implements OnInit {
+export class PerfilComponent implements OnInit {
+
   perfil = new PerfilDto();
   idPerfil = 'juanita@hotmail.com';
   constructor(public perfilService: PerfilService) { }
@@ -23,6 +24,5 @@ export class PerfilPage implements OnInit {
         }
       });
   }
-
   
 }

@@ -1,7 +1,11 @@
   <div class="perfil-avatar">
 
-    <ion-avatar slot="end">
+    <ion-avatar *ngIf="perfil.foto" slot="end">
       <ion-img [src]="perfil.foto"></ion-img>
+    </ion-avatar>
+
+    <ion-avatar *ngIf="!perfil.foto" slot="end">
+      <ion-img [src]="sinFotoUrl"></ion-img>    
     </ion-avatar>
 
     <div class="personal-info">

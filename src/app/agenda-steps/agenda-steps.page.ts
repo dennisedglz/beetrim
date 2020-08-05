@@ -57,7 +57,7 @@ export class AgendaStepsPage implements OnInit {
 
   goNext() {
     this.contador++;
-    if (this.contador == 6) {
+    if (this.contador == 7) {
       this.contador--;
       this.validateRespAgenda();
       // Esta función la voy a mover al componente del resumen
@@ -83,15 +83,15 @@ export class AgendaStepsPage implements OnInit {
     this.respAgenda.tipo_servicio = 'limpieza';
     const today = new Date();
     const fecha = new Date(this.respAgenda.fecha);
-    if (fecha > today) {
+    //if (fecha > today) {
       this.appData.datosCita = this.respAgenda;
-      this.router.navigateByUrl('/resumen-cita');
+      //this.router.navigateByUrl('/resumen-cita');
       //Mandar al resumen... 
-    } else if(fecha ==  today) {
+    /*} else if(fecha ==  today) {
       console.log('checar horas');
     }else {
       console.log('Día invalido');
-    }
+    }*/
   }
 
   goHome() {

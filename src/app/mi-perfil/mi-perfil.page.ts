@@ -28,7 +28,7 @@ export class MiPerfilPage implements OnInit {
     });
    }
   perfil= new PerfilDto();
-  idPerfil = 'arturo@hotmail.com';
+  idPerfil = this.appData.user.correo;
 
   ngOnInit() {
        //TODO obtener idPerfil de sesión
