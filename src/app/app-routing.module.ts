@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
@@ -35,6 +35,11 @@ const routes: Routes = [
   {
     path: 'mi-perfil',
     loadChildren: () => import('./mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'resumen-cita',
+    loadChildren: () => import('./resumen-cita/resumen-cita.module').then( m => m.ResumenCitaPageModule),
     canActivate: [AuthGuard]
   },
   {
