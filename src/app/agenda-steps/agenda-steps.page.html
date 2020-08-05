@@ -6,6 +6,12 @@
       </button>
     </ion-buttons>
     <ion-title>Limpieza</ion-title>
+
+    <ion-buttons slot="end">
+      <button class="back-button" (click)="goHome()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -59,29 +65,3 @@
     </ion-slide>
   </ion-slides>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <div class="footer-menu">
-      <button class="icon-button active" expand="block" color="primary" (click)="goHome()">
-        <ion-icon name="home-outline"></ion-icon>
-        <p>Inicio</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="goToAgenda()">
-        <ion-icon name="calendar-outline"></ion-icon>
-        <p>Agenda</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="goToPerfil()">
-        <ion-icon name="person-circle-outline"></ion-icon>
-        <p>Perfil</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="logout()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        <p>Cerrar sesión</p>
-      </button>
-    </div>
-  </ion-toolbar>
-</ion-footer>
