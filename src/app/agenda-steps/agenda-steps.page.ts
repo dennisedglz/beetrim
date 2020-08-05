@@ -86,8 +86,8 @@ export class AgendaStepsPage implements OnInit {
     const fecha = new Date(this.respAgenda.fecha);
     //if (fecha > today) {
       this.appData.datosCita = this.respAgenda;
-      //this.router.navigateByUrl('/resumen-cita');
-      this.appData.datosCita.id_cliente = this.appData.user.userAuthID;
+      this.appData.datosCita.id_cliente = this.appData.user.correo;
+      this.router.navigateByUrl('/resumen-cita');
       //Mandar al resumen... 
     /*} else if(fecha ==  today) {
       console.log('checar horas');
@@ -105,7 +105,7 @@ export class AgendaStepsPage implements OnInit {
   }
 
   goToAgenda() {
-    console.log('Agregar función a tu agenda');
+    this.router.navigateByUrl('/agenda', { replaceUrl: true });
   }
 
   logout() {

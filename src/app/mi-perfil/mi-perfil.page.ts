@@ -5,6 +5,7 @@ import { PerfilDto } from '../dto/PerfilDto';
 import { PerfilService } from '../perfil/services/perfil.service';
 import { RegistroService } from '../services/registro.service';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mi-perfil',
@@ -18,7 +19,8 @@ export class MiPerfilPage implements OnInit {
     private appData: AppDataService,
     public perfilService: PerfilService,
     private registerSvc: RegistroService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private router: Router
   ) {
     this.perfilForm = new FormGroup({
       email: new FormControl(this.appData.user.correo, [Validators.required]),
@@ -61,6 +63,10 @@ export class MiPerfilPage implements OnInit {
       buttons: ['OK']
     });
     await alert.present();
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/home', { replaceUrl: true });
   }
 
 }

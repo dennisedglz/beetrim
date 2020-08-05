@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PerfilDto } from 'src/app/dto/PerfilDto';
 import { PerfilService } from '../services/perfil.service';
+import { StepDtoAnswer } from 'src/app/dto/StepDto';
 
 @Component({
   selector: 'app-perfil',
@@ -8,7 +9,11 @@ import { PerfilService } from '../services/perfil.service';
   styleUrls: ['./perfil.component.scss'],
 })
 export class PerfilComponent implements OnInit {
-
+  @Output() clickSwipe = new EventEmitter<StepDtoAnswer>(); 
+  step: StepDtoAnswer = {
+    pregunta: 'id_empleado',
+    valor: ''
+  };
   perfil = new PerfilDto();
   idPerfil = 'juanita@hotmail.com';
   constructor(public perfilService: PerfilService) { }
@@ -23,6 +28,11 @@ export class PerfilComponent implements OnInit {
           console.log('No se ha encontrado un document con ese ID');
         }
       });
+  }
+
+  nextSlide() {
+      this.step.valor = this.idPerfil;
+      this.clickSwipe.emit(this.step);
   }
   
 }
