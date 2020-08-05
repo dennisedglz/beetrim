@@ -78,15 +78,12 @@ export class StepCalendarioComponent implements OnInit {
   onTimeSelected(ev) {
     let selected = new Date(ev.selectedTime);
     this.step.valor = selected.toLocaleDateString();
-    //console.log(selected.toLocaleDateString());
   }
 
   nextSlide() {
-    console.log(this.step.valor);
     if(this.step.valor == ""){
       this.valueNeeded();
     }else{
-      console.log("Next Slide ", this.step);
       this.clickSwipe.emit(this.step);
     }
   }

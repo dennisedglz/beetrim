@@ -2,21 +2,6 @@
   <h4>¿Por cuánto tiempo necesita el servicio?</h4>
   <h5 class="header-buttons">Desde 250 MXN por hora</h5>
   <div class="buttons-card">
-    <button class="step" [ngClass]="{'active': tiempo == '1'}"  (click)="changeTiempo('1')">
-      <p>1 hr</p> 
-    </button>
-
-    <button class="step" [ngClass]="{'active': tiempo == '1.5'}"  (click)="changeTiempo('1.5')">
-      <p>1.5 hrs</p> 
-    </button>
-
-    <button class="step" [ngClass]="{'active': tiempo == '2'}"  (click)="changeTiempo('2')">
-      <p>2 hrs</p> 
-    </button>
-
-    <button class="step" [ngClass]="{'active': tiempo == '2.5'}"  (click)="changeTiempo('2.5')">
-      <p>2.5 hrs</p>
-    </button>
 
     <button class="step" [ngClass]="{'active': tiempo == '3'}"  (click)="changeTiempo('3')">
       <p>3 hrs</p>
@@ -36,6 +21,10 @@
 
     <button class="step" [ngClass]="{'active': tiempo == '5'}"  (click)="changeTiempo('5')">
       <p>5 hrs</p>
+    </button>
+
+    <button class="step" [ngClass]="{'active': tiempo == '6'}"  (click)="changeTiempo('6')">
+      <p>6 hrs</p>
     </button>
   </div>
   <ion-button class="full-button" expand="full" color="primary"  (click)="nextSlide()">CONTINUAR</ion-button> 

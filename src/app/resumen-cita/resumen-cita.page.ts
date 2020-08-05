@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppDataService } from '../services/app-data.service';
 
 @Component({
   selector: 'app-resumen-cita',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumenCitaPage implements OnInit {
 
-  constructor() { }
+  constructor(public appData: AppDataService) { }
 
   ngOnInit() {
+    console.log('Datos ',this.appData.datosCita);
   }
 
 }

@@ -3,6 +3,7 @@ import { StepDtoAnswer, AgendaDto } from '../dto/StepDto';
 import { AgendaService } from '../services/agenda.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { AppDataService } from '../services/app-data.service';
 
 @Component({
   selector: 'app-agenda-steps',
@@ -18,7 +19,7 @@ export class AgendaStepsPage implements OnInit {
   }
   contador = 0;
 
-  constructor(private agendaService: AgendaService, private router: Router, private authSvc: AuthService) { }
+  constructor(private agendaService: AgendaService, private router: Router, private authSvc: AuthService, public appData: AppDataService) { }
 
   ngOnInit() {
     this.respAgenda = {
@@ -58,8 +59,6 @@ export class AgendaStepsPage implements OnInit {
     this.contador++;
     if (this.contador == 6) {
       this.contador--;
-      console.log('Is end saving... ');
-      console.log(this.respAgenda);
       this.validateRespAgenda();
       // Esta función la voy a mover al componente del resumen
      // this.agendaService.addEventoAgenda(this.respAgenda);
@@ -84,9 +83,8 @@ export class AgendaStepsPage implements OnInit {
     this.respAgenda.tipo_servicio = 'limpieza';
     const today = new Date();
     const fecha = new Date(this.respAgenda.fecha);
-    console.log('Fecha: ', fecha);
     if (fecha > today) {
-      console.log('todo bien');
+      this.appData.datosCita = this.respAgenda;
       this.router.navigateByUrl('/resumen-cita');
       //Mandar al resumen... 
     } else if(fecha ==  today) {
@@ -96,12 +94,16 @@ export class AgendaStepsPage implements OnInit {
     }
   }
 
+  goHome() {
+    this.router.navigateByUrl('/home', { replaceUrl: true });
+  }
+
   goToPerfil() {
     this.router.navigateByUrl('/mi-perfil', { replaceUrl: true });
   }
 
   goToAgenda() {
-    console.log('Agregar función a tu página');
+    console.log('Agregar función a tu agenda');
   }
 
   logout() {

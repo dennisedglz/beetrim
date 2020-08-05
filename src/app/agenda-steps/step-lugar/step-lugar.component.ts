@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { StepDtoAnswer } from 'src/app/dto/StepDto';
 import { AlertController } from '@ionic/angular';
+import { AppDataService } from '../../services/app-data.service';
 
 @Component({
   selector: 'app-step-lugar',
@@ -12,17 +13,20 @@ export class StepLugarComponent implements OnInit {
   @Output() clickSwipe = new EventEmitter<StepDtoAnswer>(); 
   lugar: string = '';
   step: StepDtoAnswer = {
-    pregunta: 'ciudad',
+    pregunta: 'direccion',
     valor: ''
   };
 
 
-  constructor(public alertCtrl: AlertController) { }
+  constructor(public alertCtrl: AlertController, public appData: AppDataService,) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.appData.address) {
+      this.lugar = this.appData.address;
+    }
+  }
 
   nextSlide() {
-    console.log(this.lugar);
     if(this.lugar == ""){
       this.valueNeeded();
     }else{

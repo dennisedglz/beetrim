@@ -1,57 +1,20 @@
-<ion-header>
-  <div class="search-container">
-    <ion-icon name="search"></ion-icon>
-    <input name="search" placeholder="¿Qué buscas?" />
-  </div>
-</ion-header>
-
 <ion-content>
-  <h1 class="simple-title">SERVICIOS</h1>
+  <div #mapElement id="map">
 
-  <!-- Colors -->
-<ion-button color="primary" expand="full">Primary</ion-button>
-<ion-button color="secondary" expand="block">Secondary</ion-button>
-<ion-button color="tertiary" shape="round">Tertiary</ion-button>
-<ion-button color="success" expand="full" fill="outline">Success</ion-button>
-<ion-button color="warning" size="large">Warning</ion-button>
-<ion-button color="danger" size="small">Danger</ion-button>
-<ion-button color="light" expand="full">Light</ion-button>
-<ion-button color="medium" expand="full" >Medium</ion-button>
-<ion-button color="dark"expand="full" >Dark</ion-button>
+    <!--<img class="logo" src="../../assets/imgs/beetrim.png" />-->
+    <div class="search-container">
+      <input [(ngModel)]="address" name="address" placeholder="Ingresa tu dirección"/>
+      <ion-icon name="search"></ion-icon>
+  </div>
 
+  <ion-button class="full-button" expand="full" color="primary" (click)="agendar()">AGENDAR</ion-button>
 
-  <ion-card>
-    <ion-card-content>
-        <ion-card-title>LIMPIEZA</ion-card-title>
-        <ion-button size="large" class="icon-btn" (click)="seeList()">
-            <ion-icon name="calendar"></ion-icon>
-        </ion-button>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
-        <ion-card-title>LIMPIEZA</ion-card-title>
-        <ion-button size="large" class="icon-btn" (click)="seeList()">
-            <ion-icon name="calendar"></ion-icon>
-        </ion-button>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
-        <ion-card-title>LIMPIEZA</ion-card-title>
-        <ion-button size="large" class="icon-btn" (click)="seeList()">
-            <ion-icon name="calendar"></ion-icon>
-        </ion-button>
-    </ion-card-content>
-  </ion-card>
+  </div>
 </ion-content>
-
 <ion-footer>
   <ion-toolbar>
     <div class="footer-menu">
-      <button class="icon-button active" expand="block" color="primary" (click)="goToHome()">
+      <button class="icon-button active" expand="block" color="primary" (click)="getAddress()">
         <ion-icon name="home-outline"></ion-icon>
         <p>Inicio</p>
       </button>

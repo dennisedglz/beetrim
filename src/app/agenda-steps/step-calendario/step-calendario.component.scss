@@ -35,12 +35,12 @@
 }
 
 :host ::ng-deep .monthview-selected {
-    background: var(--ion-color-primary)!important;
-    color: var(--ion-color-primary-contrast)!important;
+    background: var(--ion-color-secondary)!important;
+    color: var(--ion-color-secondary-contrast)!important;
     font-weight: 600;
 }
 
 :host ::ng-deep .table > thead:first-child > tr:first-child > th {
-    background: var(--ion-color-primary)!important;
-    color: var(--ion-color-primary-contrast)!important;
+    background: var(--ion-color-secondary)!important;
+    color: var(--ion-color-secondary-contrast)!important;
 }
