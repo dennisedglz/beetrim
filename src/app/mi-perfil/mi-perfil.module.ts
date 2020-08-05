@@ -8,6 +8,7 @@ import { MiPerfilPageRoutingModule } from './mi-perfil-routing.module';
 
 import { MiPerfilPage } from './mi-perfil.page';
 import { MenuModule } from '../menu/menu.module';
+import { PerfilAvatarModule } from '../perfil/perfil-avatar/perfil-avatar.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MenuModule } from '../menu/menu.module';
     FormsModule,
     IonicModule,
     MiPerfilPageRoutingModule,
-    MenuModule
+    MenuModule,
+    PerfilAvatarModule
   ],
   declarations: [MiPerfilPage]
 })
