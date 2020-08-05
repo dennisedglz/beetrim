@@ -1,5 +1,7 @@
 <ion-content padding>
-  <div class="cover">
+  <div class="perfil">
+    <app-perfil-avatar [perfil]="perfil"></app-perfil-avatar>
+  </div>
     <h1>Mi Perfil</h1>
     <form [formGroup]="perfilForm">
       <ion-item> 
@@ -16,11 +18,11 @@
       </ion-item>
       <ion-item>
         <ion-label>Correo</ion-label>
-        <ion-input type="text" formControlName="email"></ion-input>
+        <ion-input type="text" formControlName="email" readonly="true"></ion-input>
       </ion-item>
       
-      <ion-button (click)="onSubmit()" class="full-button" type="submit" expand="full" color="primary">REGISTRARME</ion-button>
+      <ion-button (click)="onSubmit()" class="full-button" type="submit" expand="full" color="primary">Guardar Cambios</ion-button>
 
     </form>
-  </div>
 </ion-content>
+<app-menu [selectedTab]="'perfil'"></app-menu>

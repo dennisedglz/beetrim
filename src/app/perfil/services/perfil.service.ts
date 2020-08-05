@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+import { ResenasDto } from 'src/app/dto/ResenasDto';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,14 @@ export class PerfilService {
   }
 
   public consultarResenaPorId(coleccion, documentId) {
-    return this.db.collection('resenas', ref => ref.where('idUsuario', '==', documentId)).valueChanges();
+    console.log('doc', documentId);
+    return this.db.collection('resenas', ref => ref.where('idUsuario', '==', documentId))
+    .snapshotChanges().pipe(map(rooms => {
+      return rooms.map(a =>{
+        const data = a.payload.doc.data() as ResenasDto;
+        return data;
+      })
+    }))
   }
 
   public insertar(coleccion, datos) {

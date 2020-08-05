@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { MiPerfilPageRoutingModule } from './mi-perfil-routing.module';
 
 import { MiPerfilPage } from './mi-perfil.page';
+import { MenuModule } from '../menu/menu.module';
+import { PerfilAvatarModule } from '../perfil/perfil-avatar/perfil-avatar.module';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { MiPerfilPage } from './mi-perfil.page';
     FormsModule,
     IonicModule,
     MiPerfilPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MenuModule,
+    PerfilAvatarModule
   ],
   declarations: [MiPerfilPage]
 })

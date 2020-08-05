@@ -8,6 +8,10 @@
 		margin-bottom: 30px;
 	}
 	
+	.item.sc-ion-label-ios-h, .item .sc-ion-label-ios-h {
+        --color: var(--ion-color-secondary);
+    }
+	
 	h1 {
 		text-align: center;
 		font-weight: bold;

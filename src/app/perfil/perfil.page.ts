@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilDto } from '../dto/PerfilDto';
-import { PerfilService } from '../services/perfil.service';
+import { PerfilService } from './services/perfil.service';
 
 @Component({
   selector: 'app-perfil',
@@ -9,7 +9,7 @@ import { PerfilService } from '../services/perfil.service';
 })
 export class PerfilPage implements OnInit {
   perfil = new PerfilDto();
-  idPerfil = 'arturo@hotmail.com';;
+  idPerfil = 'juanita@hotmail.com';;
   constructor(public perfilService: PerfilService) { }
 
   ngOnInit() {
