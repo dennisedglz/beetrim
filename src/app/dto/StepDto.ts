@@ -13,6 +13,7 @@ export class AgendaDto {
     lat: string;
     lng: string;
     tipo_servicio: string;
+    tiempo: string;
     constructor(){
         this.ciudad = '';
         this.codigo_postal = '';
@@ -28,6 +29,7 @@ export class AgendaDto {
         this.lat = '';
         this.lng = '';
         this.tipo_servicio = '';
+        this.tiempo = '';
    }
 }
 

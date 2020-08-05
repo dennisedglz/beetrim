@@ -25,6 +25,7 @@ button.back-button {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			text-transform: capitalize;
 			font-weight: 300;
 			&.bold {
 				font-weight:  bold;

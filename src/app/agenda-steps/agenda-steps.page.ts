@@ -37,6 +37,7 @@ export class AgendaStepsPage implements OnInit {
       lat: '',
       lng: '',
       tipo_servicio: '',
+      tiempo: ''
     }
   }
 
@@ -85,6 +86,7 @@ export class AgendaStepsPage implements OnInit {
     const fecha = new Date(this.respAgenda.fecha);
     if (fecha > today) {
       this.appData.datosCita = this.respAgenda;
+      this.appData.datosCita.id_cliente = this.appData.user.userAuthID;
       this.router.navigateByUrl('/resumen-cita');
       //Mandar al resumen... 
     } else if(fecha ==  today) {
