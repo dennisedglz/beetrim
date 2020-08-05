@@ -9,7 +9,7 @@ import { PerfilService } from '../services/perfil.service';
 })
 export class PerfilPage implements OnInit {
   perfil = new PerfilDto();
-  idPerfil = 'arturo@hotmail.com';;
+  idPerfil = 'juanita@hotmail.com';;
   constructor(public perfilService: PerfilService) { }
 
   ngOnInit() {

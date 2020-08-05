@@ -146,7 +146,7 @@ export class HomePage implements AfterContentInit {
   }
 
   goToAgenda() {
-    console.log('Agregar función a tu página');
+    this.router.navigateByUrl('/agenda', { replaceUrl: true });
   }
 
   agendar() {
