@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PerfilService } from 'src/app/services/perfil.service';
 import { PerfilDto } from 'src/app/dto/PerfilDto';
 import { ResenasDto } from 'src/app/dto/ResenasDto';
+import { PerfilService } from '../services/perfil.service';
 
 @Component({
   selector: 'app-perfil-resenas',
@@ -17,10 +17,7 @@ export class PerfilResenasComponent implements OnInit {
   }
   ngOnChanges() {
     this.perfilService.consultarResenaPorId('resenas', this.idPerfil).subscribe((resenas) => {
-      for (let resena of resenas) {
-        this.resenas.push(resena as ResenasDto);
-      }
-      console.log(this.resenas);
+      this.resenas=resenas;
       for (let resena of this.resenas) {
         this.perfilService.consultarPorId('perfiles', resena.idUsuarioCalificador).subscribe((perfil) => {
           if (perfil.payload.data() != null) {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilDto } from '../dto/PerfilDto';
-import { PerfilService } from '../services/perfil.service';
+import { PerfilService } from './services/perfil.service';
 
 @Component({
   selector: 'app-perfil',
