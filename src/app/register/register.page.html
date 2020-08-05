@@ -2,6 +2,18 @@
   <div class="cover">
     <img class="logo" src="../../assets/imgs/beetrim.png" />
     <form [formGroup]="registerForm">
+      <ion-item> 
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item> 
+        <ion-label>Apellidos</ion-label>
+        <ion-input type="text" formControlName="apellidos"></ion-input>
+      </ion-item>
+      <ion-item> 
+        <ion-label>Telefono</ion-label>
+        <ion-input type="text" formControlName="telefono"></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label>Correo</ion-label>
         <ion-input type="text" formControlName="email"></ion-input>

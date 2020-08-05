@@ -22,7 +22,6 @@ export class StepTiempoComponent implements OnInit {
 
   changeTiempo(t) {
     this.tiempo = t;
-    console.log(t);
   }
 
   nextSlide() {
@@ -30,7 +29,6 @@ export class StepTiempoComponent implements OnInit {
       this.valueNeeded();
     }else{
       this.step.valor = this.tiempo;
-      console.log("Next Slide ", this.step);
       this.clickSwipe.emit(this.step);
     }
   }

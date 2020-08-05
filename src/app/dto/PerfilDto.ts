@@ -18,3 +18,15 @@ export class PerfilDto {
     servicioDescripcion: string;
     fotosServicio: Array<string>;
 }
+
+export class UsuarioClienteDto {
+    userAuthID: string;
+    nombre: string;
+    apellidos: string;
+    fechaNacimiento: string;
+    correo: string;
+    telefono: string;
+    foto: string;
+    tipoUsuario: string;
+    verificado: boolean;
+}

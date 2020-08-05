@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppDataService } from '../services/app-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resumen-cita',
@@ -8,10 +9,14 @@ import { AppDataService } from '../services/app-data.service';
 })
 export class ResumenCitaPage implements OnInit {
 
-  constructor(public appData: AppDataService) { }
+  constructor(public appData: AppDataService, private router: Router,) { }
 
   ngOnInit() {
     console.log('Datos ',this.appData.datosCita);
   }
 
+  
+  confirmar() {
+    this.router.navigateByUrl('/perfil', { replaceUrl: true });
+  }
 }
