@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AgendaService } from '../services/agenda.service';
-import { AgendaDto } from 'src/app/dto/AgendaDto';
+import { AgendaDto } from 'src/app/dto/StepDto';
+import { Timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-reserva',
@@ -13,11 +14,8 @@ export class ReservaComponent implements OnInit {
   constructor(public agendaService: AgendaService) { }
 
   ngOnInit() {
-    this.agendaService.consultarAgendaPorId('agenda', this.idPerfil).subscribe((agendas) => {
-      for (let agenda of agendas) {
-        this.agendas.push(agenda as AgendaDto);
-      }
-      console.log(this.agendas);
+    this.agendaService.consultarAgendaPorId('agenda', this.idPerfil).subscribe((listaAgendas) => {
+      this.agendas=listaAgendas;
     });
   }
 

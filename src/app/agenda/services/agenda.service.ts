@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AgendaDto } from 'src/app/dto/StepDto';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +19,14 @@ export class AgendaService {
     return this.db.collection(coleccion).doc(documentId).snapshotChanges();
   }
 
-  public consultarAgendaPorId(coleccion, documentId) {
-    return this.db.collection('agenda', ref => ref.where('idCliente', '==', documentId)).valueChanges();
+  public consultarAgendaPorId(coleccion, documentId){
+    return this.db.collection('agenda', ref => ref.where('id_cliente', '==', documentId))
+    .snapshotChanges().pipe(map(rooms => {
+      return rooms.map(a =>{
+        const data = a.payload.doc.data() as AgendaDto;
+        return data;
+      })
+    }))
   }
 
   public insertar(coleccion, datos) {

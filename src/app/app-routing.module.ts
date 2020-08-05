@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./perfil-card/perfil-card.module').then( m => m.PerfilCardPageModule),
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
     canActivate: [AuthGuard],
   },
   {
