@@ -3,6 +3,10 @@
 		--background: url('../../assets/imgs/back.jpg') no-repeat center center;
 		--ion-font-family: "Roboto";
 	}
+	img.logo {
+		width: 200px;
+		margin-bottom: 30px;
+	}
 	
 	h1 {
 		text-align: center;
@@ -14,8 +18,8 @@
 	}
 	
 	.cover {
-		background: rgb(1,150,139);
-		background: linear-gradient(180deg, rgba(1,150,139,0.9) 0%, rgba(0,36,67,0.9) 65%);
+		background: rgb(255,255,255);
+		background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 65%);
 		display: flex;
 		width: 100%;
 		height: 100vh;
@@ -30,9 +34,6 @@
 		height: 45px;
 		opacity: 1;
 	}
-	:host(.button-solid.ion-color) .button-native {
-		background-color: red;
-	}
 	
 	.button-native {
 		--padding-start: 13px;
@@ -42,8 +43,8 @@
 	.item {
 		--background: transparent;
 		opacity: 1;
-		border-bottom: 1px solid #FFF;
-		color: #FFF;
+		border-bottom: 1px solid var(--ion-color-secondary);
+		color: var(--ion-color-dark);
 		margin: 10px 0 30px;
 	}
 	
@@ -51,13 +52,13 @@
 		--background: transparent;
 	}
 	.simple-link {
-		color: white;
-    font-size: 18px;
-    text-align: center;
-    margin: 10px 0;
-    background: none !important;
-    border-bottom: 2px solid #fff;
-    text-transform: uppercase;
-    padding: 5px 0;
+		color: var(--ion-color-secondary);
+		font-size: 18px;
+		text-align: center;
+		margin: 10px 0;
+		background: none !important;
+		border-bottom: 2px solid var(--ion-color-secondary);
+		text-transform: uppercase;
+		padding: 5px 0;
 	}
 }

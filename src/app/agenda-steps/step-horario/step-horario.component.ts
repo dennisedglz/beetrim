@@ -22,7 +22,6 @@ export class StepHorarioComponent implements OnInit {
 
   changeHora(t) {
     this.hora = t;
-    console.log(t);
   }
 
   nextSlide() {
@@ -30,7 +29,6 @@ export class StepHorarioComponent implements OnInit {
       this.valueNeeded();
     }else{
       this.step.valor = this.hora;
-      console.log("Next Slide ", this.step);
       this.clickSwipe.emit(this.step);
     }
   }

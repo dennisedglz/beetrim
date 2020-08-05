@@ -24,6 +24,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+    console.log('Login loaded');
   }
 
   onSubmit() {
@@ -32,12 +33,11 @@ export class LoginPage {
     this.login();
   }
 
-  async login() {
+  async login() { 
     const user = await this.authSvc.onLogin(this.user);
     console.log(user);
     if(user) {
-      //this.router.navigateByUrl('/agendar');
-      this.router.navigateByUrl('/agendar', { replaceUrl: true });
+      this.router.navigateByUrl('/home', { replaceUrl: true });
     }
   }
 

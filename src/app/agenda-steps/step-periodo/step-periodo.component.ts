@@ -22,7 +22,6 @@ export class StepPeriodoComponent implements OnInit {
 
   changeFrec(frec) {
     this.frecuencia = frec;
-    console.log(frec);
   }
 
   nextSlide() {
@@ -30,7 +29,6 @@ export class StepPeriodoComponent implements OnInit {
       this.valueNeeded();
     }else{
       this.step.valor = this.frecuencia;
-      console.log("Next Slide ", this.step);
       this.clickSwipe.emit(this.step);
     }
   }
