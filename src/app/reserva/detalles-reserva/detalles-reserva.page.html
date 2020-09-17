@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Detalles Reserva</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="perfil-card">
+    <div class="imagen">
+      <div class="imagen-card">
+        <ion-img
+          src="https://firebasestorage.googleapis.com/v0/b/beetrim-b69e0.appspot.com/o/limpieza-casa_1.jpg?alt=media&token=b65eb13b-d091-4686-a6ec-dca9e8979b5b"></ion-img>
+      </div>
+    </div>
+  
+    <div class="header">
+      <h1>Limpieza</h1>
+        <h2>Dirección: {{ reserva.direccion }} </h2>
+        <h2>Fecha: {{reserva.fecha}}</h2>
+        <h2>Hora {{reserva.hora_inicial}} - {{reserva.hora_inicial}}</h2>
+    </div>
+  </div>
+  <app-perfil></app-perfil>
+</ion-content>
+
+<app-menu [selectedTab]="'home'"></app-menu>

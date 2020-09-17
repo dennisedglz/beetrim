@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AgendaPage } from './agenda.page';
-import { DetallesReservaComponent } from './detalles-reserva/detalles-reserva.component';
+import { ReservaPage } from './reserva-page/reserva.page';
+import { DetallesReservaPage } from './detalles-reserva/detalles-reserva.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AgendaPage
+    component: ReservaPage
   },
   {
     path: 'detalles',
-    component: DetallesReservaComponent
+    component: DetallesReservaPage 
   }
 ];
 
@@ -19,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AgendaPageRoutingModule {}
+export class ReservaPageRoutingModule {}

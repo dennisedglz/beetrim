@@ -26,7 +26,7 @@ export class ResumenCitaPage implements OnInit {
     this.agendaSvc.addEventoAgenda(this.appData.datosCita).then((res) => {
       this.showAlert('Gracias', 'Tu cita se ha agendado').then(() => {
         //alert('Elegir perfil...');
-        this.router.navigateByUrl('/agenda', { replaceUrl: true });
+        this.router.navigateByUrl('/reserva', { replaceUrl: true });
 
       });
     }).catch((err) => {

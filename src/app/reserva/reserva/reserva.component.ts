@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AgendaService } from '../services/agenda.service';
 import { AgendaDto } from 'src/app/dto/StepDto';
 import { AppDataService } from 'src/app/services/app-data.service';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-reserva',
@@ -24,8 +24,12 @@ export class ReservaComponent implements OnInit {
   }
 
   abrirDetalles(reserva){
-    console.log(reserva);
-    this.router.navigateByUrl('agenda/detalles', {queryParams: { reserva: reserva } });
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        reserva: JSON.stringify(reserva)
+      }
+    };
+    this.router.navigate(['reserva/detalles'], navigationExtras);
 
   }
 

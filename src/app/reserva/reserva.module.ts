@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { AgendaPageRoutingModule } from './agenda-routing.module';
-
-import { AgendaPage } from './agenda.page';
 import { ReservaModule } from './reserva/reserva.module';
 import { MenuModule } from '../menu/menu.module';
 import { PerfilModule } from '../perfil/perfil/perfil.module';
-import { DetallesReservaComponent } from './detalles-reserva/detalles-reserva.component';
+import { ReservaPageRoutingModule } from './reserva-routing.module';
+import { ReservaPage } from './reserva-page/reserva.page';
+import { DetallesReservaPage } from './detalles-reserva/detalles-reserva.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgendaPageRoutingModule,
+    ReservaPageRoutingModule,
     ReservaModule,
     MenuModule,
     PerfilModule
   ],
-  declarations: [AgendaPage,
-    DetallesReservaComponent]
+  declarations: [ReservaPage,
+  DetallesReservaPage]
 })
-export class AgendaPageModule {}
+export class ReservaPageModule {}
