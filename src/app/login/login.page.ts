@@ -26,8 +26,8 @@ export class LoginPage {
       password: new FormControl(null, [Validators.required])
     });
 
-    this.loginForm.get('email').setValue('dennise@gmail.com');
-    this.loginForm.get('password').setValue('123456');
+    //this.loginForm.get('email').setValue('arturo@gmail.com');
+    //this.loginForm.get('password').setValue('silver1711');
   }
 
   ionViewDidLoad() {
@@ -45,7 +45,7 @@ export class LoginPage {
     if(user) {
       this.registroSvc.getUsuario(user.user.uid).subscribe((res) => {
         this.appData.user = res;
-        this.router.navigateByUrl('/home', { replaceUrl: true });
+        this.router.navigateByUrl('/inicio', { replaceUrl: true });
       }, (err) => {
         console.log('Error ', err);
       });

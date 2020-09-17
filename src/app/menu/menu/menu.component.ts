@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() { }
 
   goToInit(){
-    this.router.navigateByUrl('/home', { replaceUrl: true });
+    this.router.navigateByUrl('/inicio', { replaceUrl: true });
   }
 
   goToPerfil() {
@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
   }
 
   goToAgenda() {
-    this.router.navigateByUrl('/agenda', { replaceUrl: true });
+    this.router.navigateByUrl('/reserva', { replaceUrl: true });
   }
 
   logout() {

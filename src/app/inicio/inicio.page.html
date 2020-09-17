@@ -1,0 +1,61 @@
+<ion-content>
+  <h1 class="simple-title">¿Qué servicio estás buscando?</h1>
+
+  <ion-card (click)="limpieza()">
+    <ion-card-content>
+      <ion-card-title align="center">LIMPIEZA</ion-card-title>
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/beetrim-b69e0.appspot.com/o/limpieza-casa_1.jpg?alt=media&token=b65eb13b-d091-4686-a6ec-dca9e8979b5b"
+      />
+      <ion-icon name="card-outline"></ion-icon>
+      Desde $250
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="seeList()">
+    <ion-card-content button="true">
+      <ion-card-title align="center">JARDINERIA</ion-card-title>
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/beetrim-b69e0.appspot.com/o/pexels-anna-shvets-3771604%20(2).jpg?alt=media&token=93086b07-ca03-47b2-8d8e-eb2f0ba95cef"
+      />
+      <ion-icon name="card-outline"></ion-icon>
+      Desde $250
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="seeList()">
+    <ion-card-content button="true">
+      <ion-card-title align="center">NIÑERA</ion-card-title>
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/beetrim-b69e0.appspot.com/o/pexels-anna-shvets-3771604%20(1).jpg?alt=media&token=4b966f8a-cd4d-4c18-b521-2ca1fe42e57e"
+      />
+      <ion-icon name="card-outline"></ion-icon>
+      Desde $250
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="seeList()">
+    <ion-card-content button="true">
+      <ion-card-title align="center">CUIDADORES</ion-card-title>
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/beetrim-b69e0.appspot.com/o/pexels-andrea-piacquadio-3791666%20(1).jpg?alt=media&token=b0f1e71c-b4bf-4a77-951e-ca467077eb0e"
+      />
+      <ion-icon name="card-outline"></ion-icon>
+      Desde $250
+    </ion-card-content>
+  </ion-card>
+
+  <!--<ion-card>
+    <div class="jardineria">
+      <ion-card-content>
+        <ion-img src="https://firebasestorage.googleapis.com/v0/b/beetrim-b69e0.appspot.com/o/jardineria.jpg?alt=media&token=0af3f637-1b83-4ec8-8492-b6beb200cea2"></ion-img>
+        <ion-card-title>JARDINERIA</ion-card-title>
+        <ion-button size="large" class="icon-btn" (click)="seeList()">
+          <ion-icon name="calendar"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </div>
+  </ion-card>-->
+</ion-content>
+
+<app-menu [selectedTab]="'home'"></app-menu>

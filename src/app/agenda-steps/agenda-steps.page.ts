@@ -97,7 +97,7 @@ export class AgendaStepsPage implements OnInit {
   }
 
   goHome() {
-    this.router.navigateByUrl('/home', { replaceUrl: true });
+    this.router.navigateByUrl('/inicio', { replaceUrl: true });
   }
 
   goToPerfil() {
@@ -105,7 +105,7 @@ export class AgendaStepsPage implements OnInit {
   }
 
   goToAgenda() {
-    this.router.navigateByUrl('/agenda', { replaceUrl: true });
+    this.router.navigateByUrl('/reserva', { replaceUrl: true });
   }
 
   logout() {

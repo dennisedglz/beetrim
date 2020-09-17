@@ -38,7 +38,7 @@ export class StepLugarComponent implements OnInit {
   async valueNeeded(){
     const alert = await this.alertCtrl.create({
       header: 'Lo sentimos',
-      subHeader: 'Es necesario escribir la ciudad',
+      subHeader: 'Es necesario que ingreses la dirección',
       buttons: ['OK']
     });
     await alert.present();

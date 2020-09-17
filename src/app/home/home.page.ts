@@ -47,7 +47,8 @@ export class HomePage implements AfterContentInit {
   
 
   ngAfterContentInit() {
-		this.platform.ready().then(() => this.loadMap());
+    this.platform.ready().then(() => this.loadMap());
+    this.alertaInicio();
   }
   
   loadMap() {
@@ -146,7 +147,11 @@ export class HomePage implements AfterContentInit {
   }
 
   goToAgenda() {
-    this.router.navigateByUrl('/agenda', { replaceUrl: true });
+    this.router.navigateByUrl('/reserva', { replaceUrl: true });
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/inicio', { replaceUrl: true });
   }
 
   agendar() {
@@ -178,6 +183,15 @@ export class HomePage implements AfterContentInit {
       .catch(error => {
         console.log(error);
       })
+  }
+
+  async alertaInicio(){
+    const alert = await this.alertCtrl.create({
+      header: 'Comenzemos',
+      subHeader: 'Para iniciar debes ingresar o seleccionar la dirección donde necesitas el servicio',
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 
 }

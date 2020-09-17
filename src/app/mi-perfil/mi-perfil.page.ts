@@ -66,7 +66,7 @@ export class MiPerfilPage implements OnInit {
   }
 
   goHome() {
-    this.router.navigateByUrl('/home', { replaceUrl: true });
+    this.router.navigateByUrl('/inicio', { replaceUrl: true });
   }
 
 }
