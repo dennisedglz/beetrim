@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilDto } from 'src/app/dto/PerfilDto';
+import { UsuarioClienteDto } from 'src/app/dto/UsuarioClienteDto';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AgendaDto } from 'src/app/dto/StepDto';
 
@@ -11,7 +11,7 @@ import { AgendaDto } from 'src/app/dto/StepDto';
 export class DetallesReservaPage implements OnInit {
   private sub: any;
   reserva = new AgendaDto();
-  perfil = new PerfilDto();
+  perfil = new UsuarioClienteDto();
   constructor(
     private route: ActivatedRoute,
     private router: Router) { }

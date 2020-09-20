@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AgendaDto } from '../dto/StepDto';
-import { UsuarioClienteDto } from '../dto/PerfilDto';
+import { UsuarioClienteDto } from '../dto/UsuarioClienteDto';
 
 @Injectable({
   providedIn: 'root'

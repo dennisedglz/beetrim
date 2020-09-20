@@ -23,8 +23,8 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
+    path: 'beeworker',
+    loadChildren: () => import('./beeworker/beeworker.module').then( m => m.BeeworkerPageModule),
     canActivate: [AuthGuard],
   },
   {
@@ -44,11 +44,13 @@ const routes: Routes = [
   },
   {
     path: 'reserva',
-    loadChildren: () => import('./reserva/reserva.module').then( m => m.ReservaPageModule)
+    loadChildren: () => import('./reserva/reserva.module').then( m => m.ReservaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [AuthGuard]
   },
 ];
 

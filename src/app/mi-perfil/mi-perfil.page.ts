@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppDataService } from '../services/app-data.service';
-import { PerfilDto } from '../dto/PerfilDto';
-import { PerfilService } from '../perfil/services/perfil.service';
-import { RegistroService } from '../services/registro.service';
+import { UsuarioClienteDto } from '../dto/UsuarioClienteDto';
+import { UsuariosService } from '../services/usuarios.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -17,8 +16,7 @@ export class MiPerfilPage implements OnInit {
   perfilForm: FormGroup;
   constructor(
     private appData: AppDataService,
-    public perfilService: PerfilService,
-    private registerSvc: RegistroService,
+    private usuariosService: UsuariosService,
     private alertCtrl: AlertController,
     private router: Router
   ) {
@@ -28,20 +26,14 @@ export class MiPerfilPage implements OnInit {
       apellidos: new FormControl(this.appData.user.apellidos, [Validators.required]),
       telefono: new FormControl(this.appData.user.telefono, [Validators.required]),
     });
-   }
-  perfil= new PerfilDto();
-  idPerfil = this.appData.user.correo;
+  }
+  perfil = new UsuarioClienteDto();
+  idPerfil = this.appData.user.userAuthID;
 
   ngOnInit() {
-       //TODO obtener idPerfil de sesión
-       this.perfilService.consultarPorId('perfiles', this.idPerfil).subscribe((resultado) => {
-        if (resultado.payload.data() != null) {
-          this.perfil.idPerfil = resultado.payload.id
-          this.perfil = resultado.payload.data() as PerfilDto;
-        } else {
-          console.log('No se ha encontrado un document con ese ID');
-        }
-      });
+    this.usuariosService.getUsuario(this.idPerfil).subscribe((resultado) => {
+      this.perfil = resultado;
+    });
   }
 
   onSubmit() {
@@ -49,14 +41,14 @@ export class MiPerfilPage implements OnInit {
     this.appData.user.apellidos = this.perfilForm.get('apellidos').value;
     this.appData.user.telefono = this.perfilForm.get('telefono').value;
 
-    this.registerSvc.updateUsuario(this.appData.user, this.appData.user.userAuthID).then((res) => {
+    this.usuariosService.updateUsuario(this.appData.user, this.appData.user.userAuthID).then((res) => {
       this.showAlert('Éxito', 'Los cambios se han guardado correctamente');
     }).catch((err) => {
       this.showAlert('Lo sentimos', 'Ha ocurrido un error al guardar los cambios, por favor intente más tarde');
     });
   }
 
-  async showAlert(header, subheader){
+  async showAlert(header, subheader) {
     const alert = await this.alertCtrl.create({
       header: header,
       subHeader: subheader,

@@ -1,10 +1,10 @@
-import { PerfilDto } from './PerfilDto';
+import { UsuarioClienteDto } from './UsuarioClienteDto';
 
 export class ResenasDto {
     idReseña: string;
-    idUsuarioCalificador: string;
+    idUsuario: string
+    idUsuarioCalificador: UsuarioClienteDto;
     calificacion: number;
     justificacion: string;
     fecha: Date;
-    perfilCalificador = new PerfilDto();
 }

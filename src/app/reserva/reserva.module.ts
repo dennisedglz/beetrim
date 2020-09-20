@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ReservaModule } from './reserva/reserva.module';
 import { MenuModule } from '../menu/menu.module';
-import { PerfilModule } from '../perfil/perfil/perfil.module';
 import { ReservaPageRoutingModule } from './reserva-routing.module';
 import { ReservaPage } from './reserva-page/reserva.page';
 import { DetallesReservaPage } from './detalles-reserva/detalles-reserva.page';
+import { BeeworkerPerfilModule } from '../beeworker/beeworker-perfil/beeworker-perfil.module';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { DetallesReservaPage } from './detalles-reserva/detalles-reserva.page';
     ReservaPageRoutingModule,
     ReservaModule,
     MenuModule,
-    PerfilModule
+    BeeworkerPerfilModule
   ],
   declarations: [ReservaPage,
   DetallesReservaPage]

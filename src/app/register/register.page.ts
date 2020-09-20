@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { User } from './../shared/classes/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UsuarioClienteDto } from '../dto/PerfilDto';
-import { RegistroService } from '../services/registro.service';
+import { UsuarioClienteDto } from '../dto/UsuarioClienteDto';
 import { AppDataService } from '../services/app-data.service';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-register',
@@ -22,18 +22,22 @@ export class RegisterPage implements OnInit {
     userAuthID: '',
     nombre: '',
     apellidos: '',
+    apellidoPat: '',
+    apellidoMat: '',
     fechaNacimiento: '',
     correo: '',
     telefono: '',
     foto: '',
     tipoUsuario: '',
-    verificado: true
+    verificado: true,
+    vigIni: new Date(),
+    vigFin: new Date()
   };
 
   constructor(
     private authSvc: AuthService,
     private router: Router, 
-    private registerSvc: RegistroService,
+    private registerSvc: UsuariosService,
     private appData: AppDataService
   ) {
     this.registerForm = new FormGroup({

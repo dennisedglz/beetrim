@@ -11,7 +11,7 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class ReservaComponent implements OnInit {
   agendas = new Array<AgendaDto>();
-  idPerfil= this.appData.user.correo;
+  idPerfil= this.appData.user.userAuthID;
   constructor(public agendaService: AgendaService,
               private appData: AppDataService,
               private router: Router,

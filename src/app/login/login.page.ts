@@ -4,7 +4,7 @@ import { AuthService } from './../services/auth.service';
 import { User } from './../shared/classes/user';
 import { Router } from '@angular/router';
 import { AppDataService } from '../services/app-data.service';
-import { RegistroService } from '../services/registro.service';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -19,15 +19,15 @@ export class LoginPage {
     private authSvc: AuthService, 
     private router: Router, 
     private appData: AppDataService,
-    private registroSvc: RegistroService
+    private registroSvc: UsuariosService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
 
-    //this.loginForm.get('email').setValue('arturo@gmail.com');
-    //this.loginForm.get('password').setValue('silver1711');
+    this.loginForm.get('email').setValue('arturo@gmail.com');
+    this.loginForm.get('password').setValue('silver1711');
   }
 
   ionViewDidLoad() {

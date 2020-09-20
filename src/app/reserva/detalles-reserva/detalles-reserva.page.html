@@ -22,10 +22,10 @@
       <h1>Limpieza</h1>
         <h2>Dirección: {{ reserva.direccion }} </h2>
         <h2>Fecha: {{reserva.fecha}}</h2>
-        <h2>Hora {{reserva.hora_inicial}} - {{reserva.hora_inicial}}</h2>
+        <h2>Hora {{reserva.hora_inicial}} - {{reserva.hora_final}}</h2>
     </div>
   </div>
-  <app-perfil></app-perfil>
+  <app-beeworker-perfil></app-beeworker-perfil>
 </ion-content>
 
-<app-menu [selectedTab]="'home'"></app-menu>
+<app-menu [selectedTab]="'reserva'"></app-menu>

@@ -8,7 +8,7 @@ import { MiPerfilPageRoutingModule } from './mi-perfil-routing.module';
 
 import { MiPerfilPage } from './mi-perfil.page';
 import { MenuModule } from '../menu/menu.module';
-import { PerfilAvatarModule } from '../perfil/perfil-avatar/perfil-avatar.module';
+import { PerfilAvatarModule } from './perfil-avatar/perfil-avatar.module';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { PerfilAvatarModule } from '../perfil/perfil-avatar/perfil-avatar.module
     MiPerfilPageRoutingModule,
     ReactiveFormsModule,
     MenuModule,
-    PerfilAvatarModule
+    PerfilAvatarModule,
   ],
   declarations: [MiPerfilPage]
 })
