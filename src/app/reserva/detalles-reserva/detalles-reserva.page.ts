@@ -11,20 +11,18 @@ import { AgendaDto } from 'src/app/dto/StepDto';
 export class DetallesReservaPage implements OnInit {
   private sub: any;
   reserva = new AgendaDto();
-  perfil = new UsuarioClienteDto();
   constructor(
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
-    console.log('entro');
     this.sub = this.route
       .queryParams
       .subscribe(params => {
         if (params && params.reserva) {
           this.reserva = JSON.parse(params.reserva);
+          console.log(this.reserva);
         }
-        console.log(params)
       });
   }
 

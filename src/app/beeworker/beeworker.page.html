@@ -1,17 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Tu beeworker</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <div class="perfil">
-    
     <div class="perfil">
-      <app-beeworker-avatar [perfil]="perfil"></app-beeworker-avatar>
+      <app-beeworker-card [perfil]="beeworker"></app-beeworker-card>
     </div>
 
     <div class="perfil">
-      <app-beeworker-resenas [idPerfil]="idPerfil"></app-beeworker-resenas>
-    </div> 
-    
-   <div class="perfil">
       <app-beeworker-actividades> </app-beeworker-actividades>
     </div>
-    
+
+    <div class="perfil">
+      <app-beeworker-resenas [(idPerfil)]="beeworker.id"></app-beeworker-resenas>
+    </div>
   </div>
+
+  <br>
+  <div class="botones">
+    <ion-button (click)="guardar()" class="full-button" type="submit" expand="full" color="primary">GUARDAR</ion-button>
+    <button class="simple-link" (click)="cambiarBeeworker()">CAMBIAR DE BEEWORKER</button>
+  </div>
+
 </ion-content>

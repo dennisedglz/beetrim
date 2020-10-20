@@ -15,39 +15,9 @@
     <h4>$300 MXN</h4>
   </div>
 
-  <div class="card">
-    <h4 class="bold"> <ion-icon name="calendar-outline"></ion-icon> {{appData.datosCita.fecha}}</h4>
-    <h5><ion-icon name="location-outline"></ion-icon> {{appData.datosCita.direccion}}</h5>
-    <h5><ion-icon name="time-outline"></ion-icon> {{appData.datosCita.hora_inicial}} - 12:00</h5>
-    <h5><ion-icon name="repeat-outline"></ion-icon> {{appData.datosCita.frecuencia}}</h5>
-  </div>
+  <app-datos-cita [(idPerfil)] = "this.appData.datosCita.id_empleado"></app-datos-cita>
 
-
-  <ion-button class="full-button" expand="full" color="primary" (click)="confirmar()">CONFIRMAR</ion-button> 
+  <ion-button class="full-button" expand="full" color="primary" (click)="confirmar()">CONFIRMAR</ion-button>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <div class="footer-menu">
-      <button class="icon-button active" expand="block" color="primary" (click)="goToHome()">
-        <ion-icon name="home-outline"></ion-icon>
-        <p>Inicio</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="goToAgenda()">
-        <ion-icon name="calendar-outline"></ion-icon>
-        <p>Agenda</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="goToPerfil()">
-        <ion-icon name="person-circle-outline"></ion-icon>
-        <p>Perfil</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="logout()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        <p>Cerrar sesión</p>
-      </button>
-    </div>
-  </ion-toolbar>
-</ion-footer>
+<app-menu></app-menu>

@@ -5,12 +5,14 @@
         <ion-icon name="chevron-back-outline"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Detalles Reserva</ion-title>
+
+    <ion-title>Beeworkers disponibles</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<app-datos-cita [idPerfil]= "reserva.id_empleado"></app-datos-cita>
+  <div *ngFor= "let beeworker of listaBeeworkers">
+    <app-beeworker-avatar [beeworker]= "beeworker"></app-beeworker-avatar>
+  </div>
 </ion-content>
-
-<app-menu [selectedTab]="'reserva'"></app-menu>

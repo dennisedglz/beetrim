@@ -28,6 +28,17 @@ export class AgendaService {
     return this.agenda;
   }
 
+  consultarAgendaPorId(documentId) {
+    return this.db.collection('agenda', ref => ref.where('id_cliente', '==', documentId))
+      .snapshotChanges().pipe(map(agendas => {
+        return agendas.map(a => {
+          const data = a.payload.doc.data() as AgendaDto;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        }) as Array<AgendaDto>
+      }))
+  }
+
   getAgenda(id) {
     return this.agendaCollection.doc<AgendaDto>(id).valueChanges();
   }

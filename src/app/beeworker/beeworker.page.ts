@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { BeeworkerDto } from '../dto/BeeworkerDto';
-import { BeeworkerService } from './services/beeworker.service';
+import { AgendaService } from '../services/agenda.service';
+import { AppDataService } from '../services/app-data.service';
+import { Location } from "@angular/common";
+
 
 @Component({
   selector: 'app-beeworker-page',
@@ -8,16 +12,59 @@ import { BeeworkerService } from './services/beeworker.service';
   styleUrls: ['./beeworker.page.scss'],
 })
 export class BeeworkerPage implements OnInit {
-  perfil = new BeeworkerDto();
-  idPerfil = 'CbD8MygqmVpvq891C3iU'; //todo
-  constructor(public beeworkerService: BeeworkerService) { }
+  private sub: any;
+  beeworker: BeeworkerDto;
+  constructor(private route: ActivatedRoute, private agendaService: AgendaService,
+    private router: Router, private appData: AppDataService, private location: Location) { }
 
   ngOnInit() {
-       //TODO obtener idPerfil de sesión
-       this.beeworkerService.getBeeworker(this.idPerfil).subscribe((resultado) => {
-        this.perfil = resultado;
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        if (params && params.beeworker) {
+          this.beeworker = JSON.parse(params.beeworker);
+        }
       });
   }
 
-  
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  goBack() {
+    if (this.appData.datosCita.id) {
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          reserva: JSON.stringify(this.appData.datosCita)
+        }
+      };
+      this.router.navigate(['reserva/detalles'], navigationExtras);
+    } else {
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          reserva: JSON.stringify(this.appData.datosCita)
+        }
+      };
+      this.router.navigate(['resumen-cita'], navigationExtras);
+    }
+  }
+
+  guardar() {
+    this.appData.datosCita.id_empleado = this.beeworker.id;
+    if (this.appData.datosCita.id) {
+      this.agendaService.updateAgenda(this.appData.datosCita, this.appData.datosCita.id);
+    }
+    this.goBack();
+  }
+
+  cambiarBeeworker() {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        latitud: JSON.stringify(this.appData.datosCita.lat),
+        longitud: JSON.stringify(this.appData.datosCita.lng)
+      }
+    };
+    this.router.navigate(['beeworker/lista-beeworkers'], navigationExtras);
+  }
+
 }

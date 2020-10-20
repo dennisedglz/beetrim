@@ -1,34 +1,49 @@
 .perfil-card {
+  background-color: white;
+  align-items: center;
 
-    background-color: white;
+  .personal-info {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 0px;
+  }
 
-    .imagen-card{
-        display:block;
-        margin:auto;    
-        width: 100%;
-        height: 200px;   
+  .estrella{
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: -25px;
+    margin-right: 5px;
     }
 
-    .header{
-        margin:10px;
-    }
-  
-    .star-icon{
-        width: 15px;
-        height: 15px; 
-    }
+  h2 {
+    display: inline-block;
+    color: black;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+  }
 
-	h2{
-		font-weight: bold;
-		color:black;
-		font-family: "Roboto";
-	}
-	
-	p{
-        margin:10px;
-        color: black;
-		font-family: "Roboto";
-    }
-    
+  p {
+    color: black;
+    font-family: "Roboto";
+    font-size: 17px;
+    margin: 5px;
+  }
+
+  ion-avatar.ios.hydrated {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+  }
+
+  ion-icon.star-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--ion-color-secondary);
+    border: 2px solid var(--ion-color-secondary);
+    padding: 2px;
+    border-radius: 50%;
+  }
 }
-

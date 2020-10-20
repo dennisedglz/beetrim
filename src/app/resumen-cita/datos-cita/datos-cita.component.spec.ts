@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { BeeworkerPerfilComponent } from './beeworker-perfil.component';
 
+import { DatosCitaComponent } from './datos-cita.component';
 
-describe('BeeworkerPerfilComponent', () => {
-  let component: BeeworkerPerfilComponent;
-  let fixture: ComponentFixture<BeeworkerPerfilComponent>;
+describe('DatosCitaComponent', () => {
+  let component: DatosCitaComponent;
+  let fixture: ComponentFixture<DatosCitaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeeworkerPerfilComponent ],
+      declarations: [ DatosCitaComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BeeworkerPerfilComponent);
+    fixture = TestBed.createComponent(DatosCitaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

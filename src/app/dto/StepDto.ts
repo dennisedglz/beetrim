@@ -1,4 +1,5 @@
 export class AgendaDto {
+    id: string;
     ciudad: string;
     codigo_postal: string;
     direccion: string;

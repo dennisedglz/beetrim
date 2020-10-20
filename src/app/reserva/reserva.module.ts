@@ -7,7 +7,7 @@ import { MenuModule } from '../menu/menu.module';
 import { ReservaPageRoutingModule } from './reserva-routing.module';
 import { ReservaPage } from './reserva-page/reserva.page';
 import { DetallesReservaPage } from './detalles-reserva/detalles-reserva.page';
-import { BeeworkerPerfilModule } from '../beeworker/beeworker-perfil/beeworker-perfil.module';
+import { DatosCitaModule } from '../resumen-cita/datos-cita/datos-cita.module';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { BeeworkerPerfilModule } from '../beeworker/beeworker-perfil/beeworker-p
     ReservaPageRoutingModule,
     ReservaModule,
     MenuModule,
-    BeeworkerPerfilModule
+    DatosCitaModule
   ],
   declarations: [ReservaPage,
   DetallesReservaPage]

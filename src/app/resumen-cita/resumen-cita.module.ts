@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ResumenCitaPageRoutingModule } from './resumen-cita-routing.module';
 
 import { ResumenCitaPage } from './resumen-cita.page';
+import { DatosCitaModule } from './datos-cita/datos-cita.module';
+import { MenuModule } from '../menu/menu.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ResumenCitaPageRoutingModule
+    ResumenCitaPageRoutingModule,
+    DatosCitaModule,
+    MenuModule
   ],
   declarations: [ResumenCitaPage]
 })

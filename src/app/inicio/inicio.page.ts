@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BeeworkerService } from '../beeworker/services/beeworker.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,6 +12,7 @@ export class InicioPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    
   }
   
   seeList() {

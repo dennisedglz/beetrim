@@ -58,7 +58,7 @@ export class AgendaStepsPage implements OnInit {
 
   goNext() {
     this.contador++;
-    if (this.contador == 7) {
+    if (this.contador == 6) {
       this.contador--;
       this.validateRespAgenda();
       // Esta función la voy a mover al componente del resumen

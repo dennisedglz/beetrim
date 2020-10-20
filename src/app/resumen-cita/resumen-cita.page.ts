@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AgendaService } from '../services/agenda.service';
 import { AlertController } from '@ionic/angular';
 import * as moment from 'moment';
+import { BeeworkerService } from '../beeworker/services/beeworker.service';
 
 @Component({
   selector: 'app-resumen-cita',
@@ -11,17 +12,24 @@ import * as moment from 'moment';
   styleUrls: ['./resumen-cita.page.scss'],
 })
 export class ResumenCitaPage implements OnInit {
+  beeworkersCercanos;
 
-  constructor(public appData: AppDataService, private router: Router, private agendaSvc: AgendaService, private alertCtrl: AlertController) { }
+  constructor(private appData: AppDataService, private router: Router,
+    private agendaSvc: AgendaService, private alertCtrl: AlertController,
+    private beeworkeService: BeeworkerService) { }
 
   ngOnInit() {
-    console.log('Datos ',this.appData.datosCita);
+    if (!this.appData.datosCita.id_empleado) {
+      //ToDo agregar latitud y longitud de la reserva
+      this.beeworkeService.getBeeworkerCercano(21.8804477, -102.293085).then(beeworkersCercanos => {
+        this.beeworkersCercanos = beeworkersCercanos;
+        this.appData.datosCita.id_empleado = this.beeworkersCercanos[0].id;
+      });
+    }
     this.appData.datosCita.hora_final = moment(this.appData.datosCita.hora_inicial).add(Number(this.appData.datosCita.tiempo), 'hours').format('HH:mm');
-
-
   }
 
-  
+
   confirmar() {
     this.agendaSvc.addEventoAgenda(this.appData.datosCita).then((res) => {
       this.showAlert('Gracias', 'Tu cita se ha agendado').then(() => {
@@ -34,7 +42,7 @@ export class ResumenCitaPage implements OnInit {
     })
   }
 
-  async showAlert(header, subheader){
+  async showAlert(header, subheader) {
     const alert = await this.alertCtrl.create({
       header: header,
       subHeader: subheader,

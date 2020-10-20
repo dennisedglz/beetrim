@@ -13,8 +13,4 @@ export class ReservaPage implements OnInit {
   ngOnInit() {
   }
 
-  goHome() {
-    this.router.navigateByUrl('/inicio', { replaceUrl: true });
-  }
-
 }

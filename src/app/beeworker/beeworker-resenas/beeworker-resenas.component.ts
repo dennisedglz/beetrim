@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { UsuarioClienteDto } from 'src/app/dto/UsuarioClienteDto';
 import { ResenasDto } from 'src/app/dto/ResenasDto';
 import { BeeworkerService } from '../services/beeworker.service';
@@ -12,26 +12,27 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 export class BeeworkerResenasComponent implements OnInit {
   @Input() idPerfil;
   resenas = new Array<ResenasDto>();
-  constructor(public perfilService: UsuariosService,
-              public beeworkerService: BeeworkerService) { }
+  constructor(private perfilService: UsuariosService,
+    public beeworkerService: BeeworkerService) { }
 
   ngOnInit() {
   }
 
-  ngOnChanges() {
-    console.log(this.idPerfil);
-    this.beeworkerService.consultarResenaPorId(this.idPerfil).subscribe((resenas) => {
-      this.resenas=resenas;
-      for (let resena of this.resenas) {
-        this.perfilService.getUsuario(resena.idUsuarioCalificador).subscribe((perfil) => {
-          if (perfil) {
-            resena.idUsuarioCalificador = perfil;
-          } else {
-            console.log('No se ha encontrado un document con ese ID');
-          }
-        }); 
-      }
-    });
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.idPerfil.currentValue && this.idPerfil) {
+      this.beeworkerService.consultarResenaPorId(this.idPerfil).subscribe((resenas) => {
+        this.resenas = resenas;
+        for (let resena of this.resenas) {
+          this.perfilService.getUsuario(resena.idUsuarioCalificador).subscribe((perfil) => {
+            if (perfil) {
+              resena.idUsuarioCalificador = perfil;
+            } else {
+              console.log('No se ha encontrado un document con ese ID');
+            }
+          });
+        }
+      });
+    }
   }
 
 }

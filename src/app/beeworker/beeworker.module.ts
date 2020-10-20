@@ -7,7 +7,6 @@ import { BeeworkerAvatarModule } from './beeworker-avatar/beeworker-avatar.modul
 import { BeeworkerActividadesModule } from './beeworker-actividades/beeworker-actividades.module';
 import { BeeworkerPage } from './beeworker.page';
 import { BeeworkerPageRoutingModule } from './beeworker-routing.module';
-import { BeeworkerPerfilModule } from './beeworker-perfil/beeworker-perfil.module';
 import { BeeworkerCardModule } from './beeworker-card/perfil-card.module';
 
 @NgModule({
@@ -19,8 +18,7 @@ import { BeeworkerCardModule } from './beeworker-card/perfil-card.module';
     BeeworkerAvatarModule,
     BeeworkerCardModule,
     BeeworkerResenasModule,
-    BeeworkerActividadesModule,
-    BeeworkerPerfilModule
+    BeeworkerActividadesModule
   ],
   declarations: [
     BeeworkerPage,

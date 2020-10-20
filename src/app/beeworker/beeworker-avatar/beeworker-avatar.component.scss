@@ -1,33 +1,54 @@
-
-.perfil-avatar {
-	background-color: white;
-	padding: 15px 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-	h2{
-		font-weight: bold;
-		color:black;
-		font-family: "Roboto";
-	}
-	
-	p{
-		color: black;
-		font-family: "Roboto";
-	}
-
-	ion-avatar.ios.hydrated {
-		width: 90px;
-		height: 90px;
-	}
-
-	.personal-info {
-		text-align: left;
-    	width: calc(100% - 100px);
-	}
-
+h1 {
+  color: gray;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: -10px;
+  margin-left: 5px;
+  margin-right: 0px;
 }
 
+.perfil-avatar {
+  background-color: white;
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  .personal-info {
+    text-align: left;
+    width: calc(100% - 150px);
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 0px;
+  }
 
+  h2 {
+    color: black;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px
+  }
+
+  ion-avatar.ios.hydrated {
+    width: 90px;
+    height: 90px;
+  }
+
+  ion-icon.star-icon {
+    color: var(--ion-color-secondary);
+    border: 2px solid var(--ion-color-secondary);
+    padding: 2px;
+    border-radius: 50%;
+  }
+
+  ion-icon.flecha-icon {
+    padding: 2px;
+    font-size: 50px;
+    margin: 0px;
+    padding: 0px;
+  }
+}

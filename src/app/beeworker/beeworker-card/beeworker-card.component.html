@@ -1,27 +1,23 @@
-<div class="perfil-card">
+<div class="perfil-card" align="center">
 
-  <div class="imagen">
-    <ion-slides pager="true">
-      <ion-slide *ngFor="let foto of perfil.fotosServicio">
-        <div class="imagen-card">
-          <ion-img [src]="foto"></ion-img>
-        </div>
-      </ion-slide>
-    </ion-slides>
+  <div class="estrella">
+    <ion-label>
+      <ion-icon name="star-sharp" class="star-icon"></ion-icon>
+    </ion-label>
+    <h2>{{perfil.calificacion}}</h2>
   </div>
 
-  <div class="header">
-    <h2>{{perfil.servicioTitulo}}</h2>
-    <ion-card-subtitle>
-      <ion-label>
-        4.8(15)
-        <ion-icon name="star-sharp" class="star-icon" slot="end"></ion-icon>
-      </ion-label>
-    </ion-card-subtitle>
-  </div>
+  <ion-avatar *ngIf="perfil.foto">
+    <ion-img [src]="perfil.foto"></ion-img>
+  </ion-avatar>
 
-  <!-- <div class="contenido">
-    <p>{{perfil.servicioDescripcion}}</p>
-  </div>-->
+  <ion-avatar *ngIf="!perfil.foto">
+    <ion-img [src]="sinFotoUrl"></ion-img>
+  </ion-avatar>
+
+  <div class="personal-info">
+    <h2>{{perfil.nombre}} {{perfil.apellidoPat}} {{perfil.apellidoMat}}</h2>
+    <p>{{perfil.descripcion}}</p>
+  </div>
 
 </div>
