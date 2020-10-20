@@ -13,7 +13,7 @@ import { AppDataService } from '../services/app-data.service';
 export class AgendaStepsPage implements OnInit {
 
   @ViewChild('slides') slides;
-  respAgenda: AgendaDto;
+  respAgenda;
   slideOpts = {
     allowTouchMove: false
   }
