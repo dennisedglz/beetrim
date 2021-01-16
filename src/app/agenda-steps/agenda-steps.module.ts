@@ -14,6 +14,7 @@ import { StepHorarioModule } from './step-horario/step-horario.module';
 import { StepCalendarioModule } from './step-calendario/step-calendario.module';
 import { StepExtrasModule } from './step-extras/step-extras.module';
 import { StepTiempoModule } from './step-tiempo/step-tiempo.module';
+import { StepCuartosModule } from './step-cuartos/step-cuartos.module';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { StepTiempoModule } from './step-tiempo/step-tiempo.module';
     NgCalendarModule,
     StepLugarModule,        //Step 1
     StepPeriodoModule,      //Step 2
-    StepTiempoModule,       //Step 3
+    //StepTiempoModule,       //Step 3
+    StepCuartosModule,       //Step 3
     StepCalendarioModule,   //Step 4
     StepHorarioModule,      //Step 5
     StepExtrasModule,       //Step 6

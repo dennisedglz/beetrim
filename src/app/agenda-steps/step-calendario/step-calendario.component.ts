@@ -12,11 +12,8 @@ export class StepCalendarioComponent implements OnInit {
   @ViewChild(CalendarComponent) calendario: CalendarComponent;
 
   @Output() clickSwipe = new EventEmitter<StepDtoAnswer>(); 
-  fecha: string = '';
-  step: StepDtoAnswer = {
-    pregunta: 'fecha',
-    valor: ''
-  };
+  fecha: Date;
+  step: StepDtoAnswer = new StepDtoAnswer();
 
   eventSource = [];
   calendar = {
@@ -37,7 +34,9 @@ export class StepCalendarioComponent implements OnInit {
   lockSwipeToPrev: boolean;
 
 
-  constructor( public alertCtrl: AlertController ) { }
+  constructor( public alertCtrl: AlertController ) {
+    this.step.pregunta= 'fecha';
+   }
 
   ngOnInit() {
     this.resetEvents();
@@ -77,11 +76,11 @@ export class StepCalendarioComponent implements OnInit {
 
   onTimeSelected(ev) {
     let selected = new Date(ev.selectedTime);
-    this.step.valor = selected.toLocaleDateString();
+    this.step.valor = selected;
   }
 
   nextSlide() {
-    if(this.step.valor == ""){
+    if(!this.step.valor){
       this.valueNeeded();
     }else{
       this.clickSwipe.emit(this.step);

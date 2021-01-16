@@ -37,7 +37,9 @@ export class AgendaStepsPage implements OnInit {
       lat: '',
       lng: '',
       tipo_servicio: '',
-      tiempo: ''
+      tiempo: '',
+      cuartos: '',
+      total: ''
     }
   }
 
@@ -48,7 +50,7 @@ export class AgendaStepsPage implements OnInit {
 
   //gets the output function from the component
   onSwipeEmitted(ans: StepDtoAnswer) {
-    const pos = ans.pregunta;
+    const pos = ans.pregunta;    
     //Asigna el valor en la posicion del objeto de respuestas
     this.respAgenda[pos] = ans.valor;
     setTimeout(() => {

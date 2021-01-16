@@ -26,7 +26,16 @@ export class ResumenCitaPage implements OnInit {
         this.appData.datosCita.id_empleado = this.beeworkersCercanos[0].id;
       });
     }
-    this.appData.datosCita.hora_final = moment(this.appData.datosCita.hora_inicial).add(Number(this.appData.datosCita.tiempo), 'hours').format('HH:mm');
+      let horaIni = new Date(this.appData.datosCita.fecha);
+      let horaFin = new Date(this.appData.datosCita.fecha);      
+      let horaMinutos = this.appData.datosCita.hora_inicial.split(":");
+      horaIni.setHours(horaMinutos[0], horaMinutos[1]);
+      horaFin.setHours((+horaMinutos[0] + this.appData.datosCita.cuartos.tiempo), horaMinutos[1]);
+      this.appData.datosCita.hora_inicial = horaIni;
+      this.appData.datosCita.hora_final = horaFin;
+      this.appData.datosCita.tiempo = this.appData.datosCita.cuartos.tiempo;
+      this.appData.datosCita.total = this.appData.datosCita.cuartos.total;
+    // this.appData.datosCita.hora_final = moment(this.appData.datosCita.hora_inicial).add(Number(this.appData.datosCita.tiempo), 'hours').format('HH:mm');
   }
 
 

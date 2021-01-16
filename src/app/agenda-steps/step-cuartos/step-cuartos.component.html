@@ -1,0 +1,104 @@
+<div class="wrap">
+  <h4>Selecciona el número de habitaciones a limpiar</h4>
+  <h5 class="header-buttons">Desde 250 MXN</h5>
+
+  <ion-grid class="gridCuartos">
+    <ion-row>
+      <ion-col class="wizard-steps" size="6">
+        <span>Dormitorios</span>
+        <span class="cantidad">{{ cuartos.dormitorio }}</span>
+        <button class="step" (click)="menosCuartos('dormitorio')">
+          <ion-icon name="remove-outline"></ion-icon>
+        </button>
+        <button class="step" (click)="masCuartos('dormitorio')">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col class="wizard-steps" size="6">
+        <span>Baños</span>
+        <span class="cantidad">{{ cuartos.bano }}</span>
+        <button class="step" (click)="menosCuartos('bano')">
+          <ion-icon name="remove-outline"></ion-icon>
+        </button>
+        <button class="step" (click)="masCuartos('bano')">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="wizard-steps" size="6">
+        <span>Cocina</span>
+        <span class="cantidad">{{ cuartos.cocina }}</span>
+        <button class="step" (click)="menosCuartos('cocina')">
+          <ion-icon name="remove-outline"></ion-icon>
+        </button>
+        <button class="step" (click)="masCuartos('cocina')">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col class="wizard-steps" size="6">
+        <span>Comedor</span>
+        <span class="cantidad">{{ cuartos.comedor }}</span>
+        <button class="step" (click)="menosCuartos('comedor')">
+          <ion-icon name="remove-outline"></ion-icon>
+        </button>
+        <button class="step" (click)="masCuartos('comedor')">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="wizard-steps" size="6">
+        <span>Sala</span>
+        <span class="cantidad">{{ cuartos.sala }}</span>
+        <button class="step" (click)="menosCuartos('sala')">
+          <ion-icon name="remove-outline"></ion-icon>
+        </button>
+        <button class="step" (click)="masCuartos('sala')">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col class="wizard-steps" size="6">
+        <span>Cochera</span>
+        <span class="cantidad">{{ cuartos.cochera }}</span>
+        <button class="step" (click)="menosCuartos('cochera')">
+          <ion-icon name="remove-outline"></ion-icon>
+        </button>
+        <button class="step" (click)="masCuartos('cochera')">
+          <ion-icon name="add-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <div class="wizard-steps"></div>
+
+  <!--<div class="wizard-steps">
+    <span>Patio</span>
+    <span class="cantidad">{{patio}}</span>
+    <button class="step" (click)="menosCuartos('patio')">
+      <ion-icon name="remove-outline"></ion-icon>
+    </button>
+    <button class="step" (click)="masCuartos('patio')">
+      <ion-icon name="add-outline"></ion-icon>
+    </button>
+  </div>   -->
+
+  <div class="wizard-steps">
+    <span>Tiempo Estimado: </span>
+    <span class="cantidad">{{ cuartos.tiempo }}hrs</span>
+    <span>Total:</span>
+    <span class="cantidad">${{ cuartos.total }}</span>
+  </div>
+
+  <ion-button
+    class="full-button"
+    expand="full"
+    color="primary"
+    (click)="nextSlide()"
+    >CONTINUAR</ion-button
+  >
+</div>

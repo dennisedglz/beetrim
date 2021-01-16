@@ -12,7 +12,7 @@
 <ion-content>
   <div class="precio card">
     <h4>{{appData.datosCita.tiempo}} HRS</h4>
-    <h4>$300 MXN</h4>
+    <h4>${{appData.datosCita.cuartos.total}}MXN</h4>
   </div>
 
   <app-datos-cita [(idPerfil)] = "this.appData.datosCita.id_empleado"></app-datos-cita>

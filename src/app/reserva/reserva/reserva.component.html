@@ -9,7 +9,7 @@
       <p>Limpieza</p>
         <ion-card-subtitle>
           <ion-label>
-            {{agenda.hora_inicial}} - {{agenda.hora_final}} 
+            {{agenda.hora_inicial | date:'HH:mm'}} - {{agenda.hora_final | date:'HH:mm'}} 
             <ion-icon name="time-outline" class="star-icon" slot="end"></ion-icon>
           </ion-label>
         </ion-card-subtitle>

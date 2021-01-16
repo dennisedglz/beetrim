@@ -4,10 +4,11 @@ export class AgendaDto {
     codigo_postal: string;
     direccion: string;
     extras: string;
-    fecha: string;
+    fecha;
+    cuartos: Cuartos;
     frecuencia: string;
-    hora_final: string;
-    hora_inicial: string;
+    hora_final;
+    hora_inicial;
     periodo: string;
     id_cliente: string;
     id_empleado: string;
@@ -15,15 +16,16 @@ export class AgendaDto {
     lng: string;
     tipo_servicio: string;
     tiempo: string;
+    total: number;
     constructor(){
         this.ciudad = '';
         this.codigo_postal = '';
         this.direccion = '';
         this.extras = '';
-        this.fecha = '';
+        this.fecha;
         this.frecuencia = '';
-        this.hora_final = '';
-        this.hora_inicial = '';
+        this.hora_final;
+        this.hora_inicial;
         this.periodo = '';
         this.id_cliente = '';
         this.id_empleado = '';
@@ -36,10 +38,22 @@ export class AgendaDto {
 
 export class StepDtoAnswer {
     pregunta: string;
-    valor: string;
+    valor;
 }
 
 export class Answer {
     pregunta: string;
     valor: string;
+}
+
+export class Cuartos{
+    dormitorio: number;
+    bano: number;
+    cocina: number;
+    comedor: number;
+    sala: number;
+    patio: number;
+    cochera: number;
+    total: number;
+    tiempo;
 }
