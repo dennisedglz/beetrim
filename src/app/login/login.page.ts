@@ -5,6 +5,7 @@ import { User } from './../shared/classes/user';
 import { Router } from '@angular/router';
 import { AppDataService } from '../services/app-data.service';
 import { UsuariosService } from '../services/usuarios.service';
+import { BeeworkerService } from '../beeworker/services/beeworker.service';
 
 @Component({
   selector: 'app-login',
@@ -16,18 +17,19 @@ export class LoginPage {
   user: User = new User();
 
   constructor(
-    private authSvc: AuthService, 
-    private router: Router, 
+    private authSvc: AuthService,
+    private router: Router,
     private appData: AppDataService,
-    private registroSvc: UsuariosService
+    private registroSvc: UsuariosService,
+    private beeworkerService: BeeworkerService,
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     });
 
-    this.loginForm.get('email').setValue('arturo@gmail.com');
-    this.loginForm.get('password').setValue('silver1711');
+    this.loginForm.get('email').setValue('juanita@hotmail.com');
+    this.loginForm.get('password').setValue('juanita123');
   }
 
   ionViewDidLoad() {
@@ -40,12 +42,22 @@ export class LoginPage {
     this.login();
   }
 
-  async login() { 
+  async login() {
     const user = await this.authSvc.onLogin(this.user);
-    if(user) {
-      this.registroSvc.getUsuario(user.user.uid).subscribe((res) => {
-        this.appData.user = res;
-        this.router.navigateByUrl('/inicio', { replaceUrl: true });
+    if (user) {
+      this.beeworkerService.getBeeworkerByIdUsuario(user.user.uid).subscribe((res) => {
+        if (res.length>0) {
+          this.appData.beeworker = res[0];
+          this.router.navigateByUrl('/calendario', { replaceUrl: true });
+          console.log(res);
+        } else {
+          this.registroSvc.getUsuario(user.user.uid).subscribe((res) => {
+            this.appData.user = res;
+            this.router.navigateByUrl('/inicio', { replaceUrl: true });
+          }, (err) => {
+            console.log('Error ', err);
+          });
+        }
       }, (err) => {
         console.log('Error ', err);
       });

@@ -52,6 +52,11 @@ const routes: Routes = [
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule),
+    canActivate: [AuthGuard]
+  }, 
 ];
 
 @NgModule({

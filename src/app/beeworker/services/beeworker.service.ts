@@ -41,14 +41,16 @@ export class BeeworkerService {
     return this.beeworkerCollection.add(evento);
   }
 
-  /* removeEventoBeeworker(id) {
-    return this.beeworkerCollection.doc(id).delete();
-  } */
-
-
-  /* public consultarBeeworkerPorId(documentId) {
-    let resultado = this.db.collection('beeworkers').doc(documentId).snapshotChanges();
-  } */
+  getBeeworkerByIdUsuario(documentId) {
+    return this.db.collection('beeworkers', ref => ref.where('idUsuario', '==', documentId))
+      .snapshotChanges().pipe(map(beeworker => {
+        return beeworker.map(a => {
+          const data = a.payload.doc.data() as BeeworkerDto;   
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        }) as Array<BeeworkerDto>
+      }))
+  }  
 
   getBeeworkerCercano(latitud: number, longitud: number): Promise<Array<BeeworkerDto>> {
     let beeworkersCercanos = new Array<BeeworkerDto>();
@@ -66,7 +68,7 @@ export class BeeworkerService {
           promesasCalificaciones.push(new Promise((resolve) => {
             this.getCalificacionBeeworker(beeworker.id).then(calificacion => {
               beeworker.calificacion = calificacion
-              resolve();
+              resolve(beeworker);
             });
           }));
         }

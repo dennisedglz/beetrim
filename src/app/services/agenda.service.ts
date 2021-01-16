@@ -33,6 +33,23 @@ export class AgendaService {
       .snapshotChanges().pipe(map(agendas => {
         return agendas.map(a => {
           const data = a.payload.doc.data() as AgendaDto;
+          data.fecha = new Date(data.fecha.seconds * 1000);
+          data.hora_inicial = new Date(data.hora_inicial.seconds * 1000);
+          data.hora_final = new Date(data.hora_final.seconds * 1000);
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        }) as Array<AgendaDto>
+      }))
+  }  
+  
+  consultarAgendaPorBeeworker(documentId) {
+    return this.db.collection('agenda', ref => ref.where('id_empleado', '==', documentId))
+      .snapshotChanges().pipe(map(agendas => {
+        return agendas.map(a => {
+          const data = a.payload.doc.data() as AgendaDto;
+          data.fecha = new Date(data.fecha.seconds * 1000);
+          data.hora_inicial = new Date(data.hora_inicial.seconds * 1000);
+          data.hora_final = new Date(data.hora_final.seconds * 1000);
           const id = a.payload.doc.id;
           return { id, ...data };
         }) as Array<AgendaDto>
