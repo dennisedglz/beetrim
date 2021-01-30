@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepTiempoComponent } from './step-tiempo.component';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -9,7 +10,8 @@ import { StepTiempoComponent } from './step-tiempo.component';
     StepTiempoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ],
   exports: [
     StepTiempoComponent

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <button class="back-button">
+      <button class="back-button" (click)="goBack()">
         <ion-icon name="chevron-back-outline"></ion-icon>
       </button>
     </ion-buttons>
@@ -20,4 +20,4 @@
   <ion-button class="full-button" expand="full" color="primary" (click)="confirmar()">CONFIRMAR</ion-button>
 </ion-content>
 
-<app-menu></app-menu>
+<app-menu [selectedTab]="'agenda'"></app-menu>

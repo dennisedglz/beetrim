@@ -3,6 +3,7 @@ import es from '@angular/common/locales/es';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { StepCalendarioComponent } from './step-calendario.component';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { IonicModule } from '@ionic/angular';
 
 registerLocaleData(es);
 
@@ -12,7 +13,8 @@ registerLocaleData(es);
   ],
   imports: [
     CommonModule,
-    NgCalendarModule
+    NgCalendarModule,
+    IonicModule
   ],
   exports: [
     StepCalendarioComponent

@@ -73,7 +73,7 @@ export class AgendaStepsPage implements OnInit {
   }
 
   goBack() {
-    this.contador--;
+    // this.contador--;
     if(this.contador != 0) {
       this.contador--;
       this.slides.lockSwipes(false);
@@ -84,12 +84,12 @@ export class AgendaStepsPage implements OnInit {
   
   validateRespAgenda() {
     this.respAgenda.tipo_servicio = 'limpieza';
-    const today = new Date();
-    const fecha = new Date(this.respAgenda.fecha);
-    //if (fecha > today) {
+    // const today = new Date();
+    // const fecha = new Date(this.respAgenda.fecha);
+    // if (fecha > today) {
       this.appData.datosCita = this.respAgenda;
       this.appData.datosCita.id_cliente = this.appData.user.userAuthID;
-      this.router.navigateByUrl('/resumen-cita');
+      this.router.navigateByUrl('/resumen-cita', { replaceUrl: true });
       //Mandar al resumen... 
     /*} else if(fecha ==  today) {
       console.log('checar horas');

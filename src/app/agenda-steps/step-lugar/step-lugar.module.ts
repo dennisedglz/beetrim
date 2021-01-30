@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepLugarComponent } from './step-lugar.component';
 import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    IonicModule
   ]
 })
 export class StepLugarModule { }

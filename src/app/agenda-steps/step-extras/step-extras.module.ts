@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepExtrasComponent } from './step-extras.component';
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import { StepExtrasComponent } from './step-extras.component';
     StepExtrasComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ],
   exports: [
     StepExtrasComponent
