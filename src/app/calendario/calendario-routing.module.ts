@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: CalendarioPage
+  },
+  {
+    path: 'detalles-cita',
+    loadChildren: () => import('./detalles-cita/detalles-cita.module').then( m => m.DetallesCitaPageModule)
   }
 ];
 

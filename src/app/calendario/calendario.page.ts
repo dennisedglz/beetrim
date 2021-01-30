@@ -4,7 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { AgendaService } from '../services/agenda.service';
 import { AppDataService } from '../services/app-data.service';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AgendaDto } from '../dto/StepDto';
 
 @Component({
@@ -23,7 +23,8 @@ export class CalendarioPage implements OnInit {
     desc: '',
     startTime: '',
     endTime: '',
-    allDay: false
+    allDay: false,
+    reserva: ''
   };
  
   minDate = new Date().toISOString();
@@ -67,7 +68,8 @@ ngOnInit() {
       desc: '',
       startTime: new Date().toISOString(),
       endTime: new Date().toISOString(),
-      allDay: false
+      allDay: false,
+      reserva: ''
     };
   }
 
@@ -77,7 +79,8 @@ ngOnInit() {
       title: agenda.tipo_servicio,
       startTime:  agenda.hora_inicial,
       endTime: agenda.hora_final,
-      desc: agenda.direccion
+      desc: agenda.direccion,
+      reserva: agenda
     }
  
     this.eventSource.push(eventCopy);
@@ -120,10 +123,28 @@ async onEventSelected(event) {
   const alert = await this.alertCtrl.create({
     header: event.title,
     subHeader: event.desc,
-    message: 'From: ' + start + '<br><br>To: ' + end,
-    buttons: ['OK']
+    message: 'Desde: ' + start + '<br><br>Hasta: ' + end,
+    buttons: [
+      {
+        text: 'Cerrar',
+        handler: () => {
+        }
+      }, {
+        text: 'Detalles',
+        handler: () => {
+          let navigationExtras: NavigationExtras = {
+            queryParams: {
+              reserva: JSON.stringify(event.reserva)
+            }
+          };
+          this.appData.datosCita = event.reserva;
+          this.router.navigate(['detalles-cita'], navigationExtras);
+        }
+      }
+    ]
   });
   alert.present();
+
 }
  
 // Time slot was clicked

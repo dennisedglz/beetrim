@@ -30,6 +30,8 @@ export class LoginPage {
 
     this.loginForm.get('email').setValue('juanita@hotmail.com');
     this.loginForm.get('password').setValue('juanita123');
+    //this.loginForm.get('email').setValue('arturo@gmail.com');
+    //this.loginForm.get('password').setValue('silver1711');
   }
 
   ionViewDidLoad() {
@@ -46,10 +48,14 @@ export class LoginPage {
     const user = await this.authSvc.onLogin(this.user);
     if (user) {
       this.beeworkerService.getBeeworkerByIdUsuario(user.user.uid).subscribe((res) => {
-        if (res.length>0) {
+        if (res.length > 0) {
           this.appData.beeworker = res[0];
-          this.router.navigateByUrl('/calendario', { replaceUrl: true });
-          console.log(res);
+          this.registroSvc.getUsuario(user.user.uid).subscribe((res) => {
+            this.appData.user = res;
+            this.router.navigateByUrl('/calendario', { replaceUrl: true });
+          }, (err) => {
+            console.log('Error ', err);
+          });
         } else {
           this.registroSvc.getUsuario(user.user.uid).subscribe((res) => {
             this.appData.user = res;

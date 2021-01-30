@@ -9,6 +9,7 @@ import { CalendarioPageRoutingModule } from './calendario-routing.module';
 
 import { CalendarioPage } from './calendario.page';
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { MenuBeeworkerModule } from '../menu-beeworker/menu-beeworker.module';
 
 registerLocaleData(es);
 
@@ -18,7 +19,8 @@ registerLocaleData(es);
     FormsModule,
     IonicModule,
     CalendarioPageRoutingModule,
-    NgCalendarModule
+    NgCalendarModule,
+    MenuBeeworkerModule
   ],
   declarations: [CalendarioPage],
   providers: [

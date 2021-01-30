@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <button class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>LIMPIEZA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="card">
+  <h4 class="bold"> <ion-icon name="calendar-outline"></ion-icon> {{appData.datosCita.fecha | date:'dd/MMM/yyyy' }}</h4>
+  <h5><ion-icon name="location-outline"></ion-icon> {{appData.datosCita.direccion}}</h5>
+  <h5><ion-icon name="time-outline"></ion-icon> {{appData.datosCita.hora_inicial | date:'HH:mm'}} - {{appData.datosCita.hora_final | date:'HH:mm'}} </h5>
+  <h5><ion-icon name="repeat-outline"></ion-icon> {{appData.datosCita.frecuencia}}</h5>
+</div>
+  
+<div class="card">
+  <app-perfil-avatar [(perfil)] = "usuario"></app-perfil-avatar>
+</div>
+
+<ion-button class="full-button" expand="full" color="primary" >Como llegar</ion-button>
+
+</ion-content>
+
+<app-menu-beeworker [selectedTab]="'agenda'"></app-menu-beeworker>
+
+
+

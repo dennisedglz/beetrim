@@ -1,0 +1,22 @@
+<ion-footer>
+  <ion-toolbar>
+    <div class="footer-menu">
+
+      <button class="icon-button" [ngClass]="{'active' : selectedTab === 'agenda'}" expand="block" color="primary" (click)="goToAgenda()">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <p>Reservas</p>
+      </button>
+
+      <button class="icon-button" [ngClass]="{'active' : selectedTab === 'perfil'}" expand="block" color="primary" (click)="goToPerfil()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <p>Perfil</p>
+      </button>
+
+      <!--<button class="icon-button" [ngClass]="{'active' : selectedTab === 'logout'}" expand="block" color="primary" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <p>Cerrar sesión</p>
+      </button>-->
+
+    </div>
+  </ion-toolbar>
+</ion-footer>
