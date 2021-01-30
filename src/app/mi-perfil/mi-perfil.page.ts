@@ -5,6 +5,7 @@ import { UsuarioClienteDto } from '../dto/UsuarioClienteDto';
 import { UsuariosService } from '../services/usuarios.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-mi-perfil',
@@ -16,6 +17,7 @@ export class MiPerfilPage implements OnInit {
   perfilForm: FormGroup;
   constructor(
     private appData: AppDataService,
+    private authSvc: AuthService,
     private usuariosService: UsuariosService,
     private alertCtrl: AlertController,
     private router: Router
@@ -55,6 +57,17 @@ export class MiPerfilPage implements OnInit {
       buttons: ['OK']
     });
     await alert.present();
+  }
+
+  logout() {
+    this.authSvc.logoutUser()
+      .then(res => {
+        console.log(res);
+        this.router.navigateByUrl('/login', { replaceUrl: true });
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   goHome() {

@@ -11,28 +11,4 @@
 
   </div>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <div class="footer-menu">
-      <button class="icon-button active" expand="block" color="primary" (click)="getAddress()">
-        <ion-icon name="home-outline"></ion-icon>
-        <p>Inicio</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="goToAgenda()">
-        <ion-icon name="calendar-outline"></ion-icon>
-        <p>Reservas</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="goToPerfil()">
-        <ion-icon name="person-circle-outline"></ion-icon>
-        <p>Perfil</p>
-      </button>
-
-      <button class="icon-button" expand="block" color="primary" (click)="logout()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        <p>Cerrar sesión</p>
-      </button>
-    </div>
-  </ion-toolbar>
-</ion-footer>
+<app-menu [selectedTab]="'home'"></app-menu>

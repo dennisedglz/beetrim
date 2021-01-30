@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { MenuModule } from '../menu/menu.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    MenuModule
   ],
   declarations: [HomePage],
   providers: [

@@ -142,18 +142,6 @@ export class HomePage implements AfterContentInit {
     .catch((error: any) => console.log(error));
   }
 
-  goToPerfil() {
-    this.router.navigateByUrl('/mi-perfil', { replaceUrl: true });
-  }
-
-  goToAgenda() {
-    this.router.navigateByUrl('/reserva', { replaceUrl: true });
-  }
-
-  goBack() {
-    this.router.navigateByUrl('/inicio', { replaceUrl: true });
-  }
-
   agendar() {
     if(this.address == "") {
       this.valueNeeded();
@@ -164,7 +152,6 @@ export class HomePage implements AfterContentInit {
     }
   }
 
-
   async valueNeeded(){
     const alert = await this.alertCtrl.create({
       header: 'Lo sentimos',
@@ -172,17 +159,6 @@ export class HomePage implements AfterContentInit {
       buttons: ['OK']
     });
     await alert.present();
-  }
-
-  logout() {
-    this.authSvc.logoutUser()
-      .then(res => {
-        console.log(res);
-        this.router.navigateByUrl('/login', { replaceUrl: true });
-      })
-      .catch(error => {
-        console.log(error);
-      })
   }
 
   async alertaInicio(){

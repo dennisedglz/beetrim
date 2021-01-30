@@ -24,5 +24,15 @@
       <ion-button (click)="onSubmit()" class="full-button" type="submit" expand="full" color="primary">Guardar Cambios</ion-button>
 
     </form>
+    <div align="center">
+      <button class="simple-link" (click)="logout()">Cerrar sesión</button>
+    </div>
+
 </ion-content>
-<app-menu [selectedTab]="'perfil'"></app-menu>
+<div *ngIf = "appData.beeworker == null">
+  <app-menu [selectedTab]="'perfil'"></app-menu>
+</div>
+
+<div *ngIf = "appData.beeworker != null">
+  <app-menu-beeworker [selectedTab]="'perfil'"></app-menu-beeworker>
+</div>
