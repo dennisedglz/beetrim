@@ -3,7 +3,7 @@
     box-sizing: border-box;
     //padding: 0 16px;
     h4 {
-        font-weight: 200;
+        font-weight: 200px;
         font-family: "Roboto", "Helvetica Neue", sans-serif;
     }
     .header-buttons {
@@ -48,15 +48,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            // padding: 8px;
+            padding: 6%;
             margin: 2px;
-            // width: 30%;
+            // width: 20%;
             border: 1px solid var(--ion-color-primary);
             color: var(--ion-color-step-400);
         }
         
     }
     .full-button {
+        padding: 0 16px;
         margin: 40px 0 0;
     }
 }
